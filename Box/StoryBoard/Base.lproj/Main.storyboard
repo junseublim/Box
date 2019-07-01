@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PTY-Qq-iPc">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSans-SemiBold.ttf">
+            <string>NotoSans-SemiBold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="3tn-Lv-gob">
+            <objects>
+                <viewController id="PTY-Qq-iPc" customClass="ViewController" customModule="Box" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pKO-pp-N7f">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EZe-Uy-78I">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <subviews>
+                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="G9W-Gw-tYC">
+                                        <rect key="frame" x="168" y="723" width="39" height="37"/>
+                                    </pageControl>
+                                </subviews>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJT-HN-p84">
+                                <rect key="frame" x="32" y="724" width="311" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="Ae4-gG-IiM"/>
+                                    <constraint firstAttribute="width" secondItem="aJT-HN-p84" secondAttribute="height" multiplier="311:52" id="IEF-k3-Ii5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NotoSans-SemiBold" family="Noto Sans" pointSize="20"/>
+                                <state key="normal" title="시작하기">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="startSlide:" destination="PTY-Qq-iPc" eventType="touchUpInside" id="X5I-fI-8BN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yHr-Ew-fz6">
+                                <rect key="frame" x="24" y="724" width="59" height="36"/>
+                                <fontDescription key="fontDescription" name="NotoSans-SemiBold" family="Noto Sans" pointSize="17"/>
+                                <state key="normal" title="건너뛰기"/>
+                                <connections>
+                                    <action selector="skipSlide:" destination="PTY-Qq-iPc" eventType="touchUpInside" id="ama-b2-QNT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rRo-gT-Dfp">
+                                <rect key="frame" x="321" y="724" width="30" height="36"/>
+                                <fontDescription key="fontDescription" name="NotoSans-SemiBold" family="Noto Sans" pointSize="17"/>
+                                <state key="normal" title="다음"/>
+                                <connections>
+                                    <action selector="nextSlide:" destination="PTY-Qq-iPc" eventType="touchUpInside" id="vyL-Yb-k4T"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gLO-i6-byP" firstAttribute="bottom" secondItem="G9W-Gw-tYC" secondAttribute="bottom" constant="18" id="38K-e5-M0k"/>
+                            <constraint firstItem="gLO-i6-byP" firstAttribute="bottom" secondItem="rRo-gT-Dfp" secondAttribute="bottom" constant="18" id="7tt-c9-IW3"/>
+                            <constraint firstItem="yHr-Ew-fz6" firstAttribute="leading" secondItem="gLO-i6-byP" secondAttribute="leading" constant="24" id="BVs-c9-mK8"/>
+                            <constraint firstItem="gLO-i6-byP" firstAttribute="trailing" secondItem="EZe-Uy-78I" secondAttribute="trailing" id="Fw3-2d-jx4"/>
+                            <constraint firstItem="EZe-Uy-78I" firstAttribute="leading" secondItem="gLO-i6-byP" secondAttribute="leading" id="HBZ-vG-FNW"/>
+                            <constraint firstItem="gLO-i6-byP" firstAttribute="top" secondItem="EZe-Uy-78I" secondAttribute="top" constant="44" id="LTw-ia-aGM"/>
+                            <constraint firstItem="gLO-i6-byP" firstAttribute="trailing" secondItem="rRo-gT-Dfp" secondAttribute="trailing" constant="24" id="Oen-1b-bzX"/>
+                            <constraint firstItem="G9W-Gw-tYC" firstAttribute="centerX" secondItem="gLO-i6-byP" secondAttribute="centerX" id="ZG9-Un-3ub"/>
+                            <constraint firstItem="EZe-Uy-78I" firstAttribute="bottom" secondItem="gLO-i6-byP" secondAttribute="bottom" constant="34" id="ard-9n-hrF"/>
+                            <constraint firstItem="gLO-i6-byP" firstAttribute="bottom" secondItem="yHr-Ew-fz6" secondAttribute="bottom" constant="18" id="eL0-7G-O5J"/>
+                            <constraint firstItem="aJT-HN-p84" firstAttribute="centerX" secondItem="gLO-i6-byP" secondAttribute="centerX" id="nLb-O4-DX1"/>
+                            <constraint firstItem="gLO-i6-byP" firstAttribute="bottom" secondItem="aJT-HN-p84" secondAttribute="bottom" constant="2" id="zbo-c9-9dS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gLO-i6-byP"/>
+                    </view>
+                    <size key="freeformSize" width="375" height="812"/>
+                    <connections>
+                        <outlet property="nextBtn" destination="rRo-gT-Dfp" id="lZm-bu-Bbd"/>
+                        <outlet property="pageControl" destination="G9W-Gw-tYC" id="nAf-1f-6Bg"/>
+                        <outlet property="scrollView" destination="EZe-Uy-78I" id="OGA-QD-AB5"/>
+                        <outlet property="skipBtn" destination="yHr-Ew-fz6" id="OZu-3X-Mer"/>
+                        <outlet property="startBtn" destination="aJT-HN-p84" id="o72-B5-JFC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9mq-4f-zVQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="565.60000000000002" y="407.88177339901478"/>
+        </scene>
+    </scenes>
+</document>
