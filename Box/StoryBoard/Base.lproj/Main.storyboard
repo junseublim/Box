@@ -32,10 +32,10 @@
                                 </subviews>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJT-HN-p84">
-                                <rect key="frame" x="32" y="724" width="311" height="52"/>
+                                <rect key="frame" x="16" y="724" width="343" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="Ae4-gG-IiM"/>
-                                    <constraint firstAttribute="width" secondItem="aJT-HN-p84" secondAttribute="height" multiplier="311:52" id="IEF-k3-Ii5"/>
+                                    <constraint firstAttribute="width" secondItem="aJT-HN-p84" secondAttribute="height" multiplier="343:52" id="IEF-k3-Ii5"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="NotoSans-SemiBold" family="Noto Sans" pointSize="20"/>
                                 <state key="normal" title="시작하기">

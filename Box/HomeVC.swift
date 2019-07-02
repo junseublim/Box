@@ -10,6 +10,7 @@ import UIKit
 
 class HomeVC: UIViewController {
 
+    @IBOutlet var pageControl: UIPageControl!
     @IBOutlet var cartBtn: UIButton!
     @IBOutlet var scrollView: UIScrollView!
     override func viewDidLoad() {
@@ -69,8 +70,8 @@ class HomeVC: UIViewController {
         addLabel(view: view4)
 
         
-        //pageControl.pageIndicatorTintColor = UIColor.lightBlueGrey
-        //pageControl.currentPageIndicatorTintColor = UIColor.pumpkinOrange
+        pageControl.pageIndicatorTintColor = UIColor.lightBlueGrey
+    pageControl.currentPageIndicatorTintColor = UIColor.pumpkinOrange
     }
     func addLabel(view: UIView){
         let label1 = UILabel()
@@ -100,21 +101,11 @@ class HomeVC: UIViewController {
 
 extension HomeVC: UIScrollViewDelegate{
     
-    /*func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         if fmod(scrollView.contentOffset.x, scrollView.frame.maxX) == 0 {
             pageControl.currentPage = Int(scrollView.contentOffset.x / scrollView.frame.maxX)
         }
-        if Int(scrollView.contentOffset.x / scrollView.frame.maxX) == 2 {
-            startBtn.isHidden = false
-            nextBtn.isHidden = true
-            skipBtn.isHidden = true
-        }
-        else {
-            startBtn.isHidden = true
-            nextBtn.isHidden = false
-            skipBtn.isHidden = false
-        }
+        
     }
-    */
 }
 
