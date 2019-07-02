@@ -10,7 +10,7 @@ import UIKit
 
 class SearchVC: UIViewController {
 
-    let recentList = ["a","b","c","d","e"]
+    let recentList = ["물티슈","가그린","c","d","e"]
     let recommendList = ["x","y","z"]
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var SearchTV: UITableView!
@@ -79,20 +79,23 @@ func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> 
         switch flag {
         case 0 :
             let cell = SearchTV.dequeueReusableCell(withIdentifier: "recentCell", for: indexPath)
-            cell.textLabel?.font = UIFont(name: "SF-Pro-Text-Medium.otf", size: 17)
-            cell.textLabel?.text = returnList[indexPath.row]
+            cell.textLabel!.text = returnList[indexPath.row]
+            cell.textLabel!.font = UIFont(name: "SF-Pro-Text-Medium", size: 17)
+            
             return cell
         case 1:
             let cell = SearchTV.dequeueReusableCell(withIdentifier: "recommendCell", for: indexPath)
-            cell.textLabel?.font = UIFont(name: "SF-Pro-Text-Medium.otf", size: 17)
-            cell.textLabel?.text = returnList[indexPath.row]
+                        cell.textLabel!.text = returnList[indexPath.row]
+            cell.textLabel!.font = UIFont(name: "SF-Pro-Text-Medium", size: 17)
+            
             return cell
         default:
             break
         }
         let cell = SearchTV.dequeueReusableCell(withIdentifier: "recentCell", for: indexPath)
-        cell.textLabel?.font = UIFont(name: "SF-Pro-Text-Medium.otf", size: 17)
-        cell.textLabel?.text = recentList[indexPath.row]
+                cell.textLabel!.text = recentList[indexPath.row]
+        cell.textLabel!.font = UIFont(name: "SF-Pro-Text-Medium.otf", size: 17)
+
     return cell
 }
 

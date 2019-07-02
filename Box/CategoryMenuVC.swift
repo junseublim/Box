@@ -104,4 +104,11 @@ packageBtn.setTitleColor(UIColor.pumpkinOrange, for: .normal)
         
         return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let dvc = storyboard?.instantiateViewController(withIdentifier: "Test") as! PeriodicalProductVC
+        
+        navigationController?.pushViewController(dvc, animated: true)
+    
+    }
 }
