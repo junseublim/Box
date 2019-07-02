@@ -29,7 +29,7 @@ class CategoryMenuVC: UIViewController, UICollectionViewDelegate, UICollectionVi
         categoryCollection.delegate = self
         categoryCollection.dataSource = self
         periodicView.backgroundColor = UIColor.pumpkinOrange
-        packageView.backgroundColor = UIColor.darkGrey
+        packageView.backgroundColor = UIColor.lightBlueGrey
         periodicBtn.setTitleColor(UIColor.pumpkinOrange, for: .normal)
         packageBtn.setTitleColor(UIColor.darkGrey, for: .normal)
         setItemList()
@@ -38,7 +38,7 @@ class CategoryMenuVC: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     @IBAction func packageTouched(_ sender: Any) {
         packageView.backgroundColor = UIColor.pumpkinOrange
-        periodicView.backgroundColor = UIColor.darkGrey
+        periodicView.backgroundColor = UIColor.lightBlueGrey
 packageBtn.setTitleColor(UIColor.pumpkinOrange, for: .normal)
         periodicBtn.setTitleColor(UIColor.darkGrey, for: .normal)
         buttonselection = 1
@@ -46,7 +46,7 @@ packageBtn.setTitleColor(UIColor.pumpkinOrange, for: .normal)
     }
     @IBAction func periodicTouched(_ sender: Any) {
         periodicView.backgroundColor = UIColor.pumpkinOrange
-        packageView.backgroundColor = UIColor.darkGrey
+        packageView.backgroundColor = UIColor.lightBlueGrey
         packageBtn.setTitleColor(UIColor.darkGrey, for: .normal)
         periodicBtn.setTitleColor(UIColor.pumpkinOrange, for: .normal)
         buttonselection = 0
