@@ -9,36 +9,47 @@
 import UIKit
 
 class PeriodicalProductVC: UIViewController {
+    
     var productTypeList = [String]()
     var idx : Int?
     var naviTitle: String?
     var products = [Product]()
+    @IBOutlet var setOrderBtn: UIButton!
+    @IBOutlet var numOfProducts: UILabel!
     @IBOutlet var productListTV: UITableView!
     @IBOutlet var productTypeCV: UICollectionView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.productTypeCV.delegate = self
-        self.productTypeCV.dataSource = self
-        self.productListTV.delegate = self
-        self.productListTV.dataSource = self
+        productTypeCV.delegate = self
+        productTypeCV.dataSource = self
+        productListTV.delegate = self
+        productListTV.dataSource = self
         navigationItem.title = naviTitle
         setNaviBtn(color: UIColor.darkGrey)
         setTestItems()
-        registerTVC()
+        let nibName = UINib(nibName: "PeriodicalCell", bundle: nil)
+        productListTV.register(nibName, forCellReuseIdentifier: "PeriodicalCell")
+        }
+    func testfunc() {
+        
     }
     func setTestItems() {
         let name = "제주삼다수, 500ml,40개입"
         let brand = "삼다수"
         let pricebefore = "11,700 "
-        let price = "10,000원"
+        let price = "10,000"
         let image = "productImg"
-        let product = Product(name: name, icon: image, brand: brand, priceBeforeSale: pricebefore, finalPrice: price)
-        for _ in 0 ..< 5 {
-            products.append(product!)
+        let product = Product(name: name, icon: image, brand: brand, priceBeforeSale: pricebefore, finalPrice: price)!
+        for _ in 0 ..< 10 {
+            products.append(product)
         }
-        print(products[0].name, products[0].icon)
+    }
+    func registerTVC() {
+        let nibName = UINib(nibName: "PeriodicalTVC", bundle: nil)
+        productListTV.register(nibName, forCellReuseIdentifier: "PeriodicalTVC")
+        
     }
     func setNaviBtn(color : UIColor){
         
@@ -59,16 +70,15 @@ class PeriodicalProductVC: UIViewController {
         navigationItem.rightBarButtonItem?.tintColor = color
         navigationController?.interactivePopGestureRecognizer?.delegate = self as? UIGestureRecognizerDelegate
     }
-    func registerTVC() {
-        
-        /*
-         xib 로 만들어진 UITableViewCell 을 사용하기 위해서는 아래와 같은 절차가 필요합니다.
-         nibName 에는 *.xib 의 이름을 입력합니다.
-         forCellReuseIdentifier 에는 *.xib 의 reuseIdentifier 를 입력합니다.
-         */
-        let nibName = UINib(nibName: "PeriodicalTVC", bundle: nil)
-        productListTV.register(nibName, forCellReuseIdentifier: "PeriodicalTVC")
- 
+
+    @IBAction func selectOrder(_ sender: Any) {
+        let actionSheet = UIAlertController()
+        actionSheet.addAction(UIAlertAction(title: "최신순", style: .default, handler: { result in self.testfunc()}))
+        actionSheet.addAction(UIAlertAction(title: "인기순", style: .default, handler: { result in self.testfunc() }))
+                actionSheet.addAction(UIAlertAction(title: "가격 낮은순", style: .default, handler: { result in self.testfunc() }))
+        actionSheet.addAction(UIAlertAction(title: "가격 높은순", style: .default, handler: { result in self.testfunc() }))
+        actionSheet.addAction(UIAlertAction(title: "취소", style: .cancel, handler: nil))
+        self.present(actionSheet, animated: true, completion: nil)
     }
     @objc func pop(){
         self.navigationController?.popViewController(animated: true)
@@ -120,27 +130,18 @@ extension PeriodicalProductVC : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return products.count
-    }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if naviTitle == "정기배송" {
-        let cell = productListTV.dequeueReusableCell(withIdentifier: "PeriodicalTVC", for: indexPath) as! PeriodicalTVC
-       cell.productName.text = products[indexPath.row].name
-        cell.productImg.image = UIImage(named: products[indexPath.row].icon!)
-        cell.priceBeforeSale.text = products[indexPath.row].priceBeforeSale!
-        cell.finalPrice.text = products[indexPath.row].finalPrice!
-        cell.productBrand.text = products[indexPath.row].brand!
-            return cell
-        }
-            //밑에 변경
-            let cell = productListTV.dequeueReusableCell(withIdentifier: "PeriodicalTVC", for: indexPath) as! PeriodicalTVC
-            cell.productName.text = products[indexPath.row].name
-            cell.productImg.image = UIImage(named: products[indexPath.row].icon!)
-            cell.priceBeforeSale.text = products[indexPath.row].priceBeforeSale
-            cell.finalPrice.text = products[indexPath.row].finalPrice
-            cell.productBrand.text = products[indexPath.row].brand
-            return cell
+        
     }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = productListTV.dequeueReusableCell(withIdentifier: "PeriodicalCell", for: indexPath) as! PeriodicalCell
+        cell.productImg.image = UIImage(named: products[indexPath.row].icon!)
+        cell.productName.text = products[indexPath.row].name
+        cell.productBrand.text = products[indexPath.row].brand
+        cell.priceBeforeSale.text = products[indexPath.row].priceBeforeSale
+        cell.finalPrice.text = products[indexPath.row].finalPrice
+        return cell
+    }
     
 }
 

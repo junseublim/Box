@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSans-Light.ttf">
+            <string>NotoSans-Light</string>
+        </array>
+        <array key="NotoSans-Medium.ttf">
+            <string>NotoSans-Medium</string>
+        </array>
+        <array key="NotoSans-SemiBold.ttf">
+            <string>NotoSans-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PeriodicalCell" rowHeight="113" id="KGk-i7-Jjw" customClass="PeriodicalCell" customModule="Box" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="343" height="123"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="343" height="122.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="D4v-NM-LlK">
+                        <rect key="frame" x="16" y="17" width="90.5" height="90.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="D4v-NM-LlK" secondAttribute="height" multiplier="1:1" id="04V-Du-eN3"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="brand" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="evp-FU-Yyb">
+                        <rect key="frame" x="119.5" y="17" width="30" height="15"/>
+                        <fontDescription key="fontDescription" name="NotoSans-Light" family="Noto Sans" pointSize="11"/>
+                        <color key="textColor" red="0.12941176469999999" green="0.1450980392" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ProductName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w0v-ck-BHs">
+                        <rect key="frame" x="119.5" y="32" width="86.5" height="18"/>
+                        <fontDescription key="fontDescription" name="NotoSans-Medium" family="Noto Sans" pointSize="13"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="priceBeforeSale" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="orB-b9-Vh7">
+                        <rect key="frame" x="119.5" y="60" width="78.5" height="15"/>
+                        <fontDescription key="fontDescription" name="NotoSans-Light" family="Noto Sans" pointSize="11"/>
+                        <color key="textColor" red="0.52549019610000003" green="0.5568627451" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="finalPrice" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0CK-RR-9rp">
+                        <rect key="frame" x="119.5" y="75" width="78.5" height="23.5"/>
+                        <fontDescription key="fontDescription" name="NotoSans-SemiBold" family="Noto Sans" pointSize="17"/>
+                        <color key="textColor" red="0.12941176469999999" green="0.1450980392" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SkJ-ey-rEZ">
+                        <rect key="frame" x="198" y="60" width="10" height="15"/>
+                        <fontDescription key="fontDescription" name="NotoSans-Medium" family="Noto Sans" pointSize="11"/>
+                        <color key="textColor" red="0.52549019610000003" green="0.5568627451" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="원" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6K-wc-HuR">
+                        <rect key="frame" x="198" y="75" width="15" height="24"/>
+                        <fontDescription key="fontDescription" name="NotoSans-SemiBold" family="Noto Sans" pointSize="17"/>
+                        <color key="textColor" red="0.12941176469999999" green="0.1450980392" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="d6K-wc-HuR" firstAttribute="leading" secondItem="0CK-RR-9rp" secondAttribute="trailing" id="1DV-O2-mEK"/>
+                    <constraint firstItem="SkJ-ey-rEZ" firstAttribute="centerY" secondItem="orB-b9-Vh7" secondAttribute="centerY" id="4ou-90-d3A"/>
+                    <constraint firstItem="d6K-wc-HuR" firstAttribute="centerY" secondItem="0CK-RR-9rp" secondAttribute="centerY" id="68X-hP-WAc"/>
+                    <constraint firstItem="orB-b9-Vh7" firstAttribute="top" secondItem="w0v-ck-BHs" secondAttribute="bottom" constant="10" id="694-6e-Haq"/>
+                    <constraint firstItem="0CK-RR-9rp" firstAttribute="leading" secondItem="D4v-NM-LlK" secondAttribute="trailing" constant="13" id="HJu-vP-fMa"/>
+                    <constraint firstItem="evp-FU-Yyb" firstAttribute="leading" secondItem="D4v-NM-LlK" secondAttribute="trailing" constant="13" id="ZkK-Gr-VOU"/>
+                    <constraint firstItem="SkJ-ey-rEZ" firstAttribute="leading" secondItem="orB-b9-Vh7" secondAttribute="trailing" id="cJe-6h-hLz"/>
+                    <constraint firstAttribute="bottom" secondItem="0CK-RR-9rp" secondAttribute="bottom" constant="24" id="dRw-bS-MK6"/>
+                    <constraint firstItem="D4v-NM-LlK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="17" id="fZl-Wx-JXr"/>
+                    <constraint firstItem="w0v-ck-BHs" firstAttribute="leading" secondItem="D4v-NM-LlK" secondAttribute="trailing" constant="13" id="hdy-T7-3Fh"/>
+                    <constraint firstItem="evp-FU-Yyb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="17" id="kCI-J9-3iB"/>
+                    <constraint firstItem="0CK-RR-9rp" firstAttribute="top" secondItem="orB-b9-Vh7" secondAttribute="bottom" id="nHi-mr-PwP"/>
+                    <constraint firstItem="D4v-NM-LlK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="sc0-Lw-iIY"/>
+                    <constraint firstItem="D4v-NM-LlK" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="45:61" id="yN1-l7-oHG"/>
+                    <constraint firstItem="w0v-ck-BHs" firstAttribute="top" secondItem="evp-FU-Yyb" secondAttribute="bottom" id="yRk-dx-eyn"/>
+                    <constraint firstItem="orB-b9-Vh7" firstAttribute="leading" secondItem="D4v-NM-LlK" secondAttribute="trailing" constant="13" id="zn9-KK-Gie"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <inset key="separatorInset" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
+            <connections>
+                <outlet property="finalPrice" destination="0CK-RR-9rp" id="sOf-9x-oDD"/>
+                <outlet property="priceBeforeSale" destination="orB-b9-Vh7" id="nOi-BI-W1o"/>
+                <outlet property="productBrand" destination="evp-FU-Yyb" id="FOf-Vb-z02"/>
+                <outlet property="productImg" destination="D4v-NM-LlK" id="D6n-HJ-hUY"/>
+                <outlet property="productName" destination="w0v-ck-BHs" id="BHw-9u-XOO"/>
+            </connections>
+            <point key="canvasLocation" x="78.985507246376812" y="133.59375"/>
+        </tableViewCell>
+    </objects>
+</document>

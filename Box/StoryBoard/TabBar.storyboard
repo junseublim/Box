@@ -1080,6 +1080,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="준비해봤어" id="jHg-29-SCN">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="buttonArrow" id="0jJ-8p-HOj">
+                            <color key="tintColor" red="0.12941176469999999" green="0.1450980392" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="goBack:" destination="F41-rh-1rz" id="bow-0L-eU9"/>
                             </connections>

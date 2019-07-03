@@ -16,7 +16,7 @@
 		D60A8FCF22C91F5800086350 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60A8FCE22C91F5800086350 /* HomeVC.swift */; };
 		D651618722CC6637002AE0DC /* PeriodicalTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D651618522CC6636002AE0DC /* PeriodicalTVC.swift */; };
 		D651618D22CC6D49002AE0DC /* productCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D651618C22CC6D49002AE0DC /* productCell.swift */; };
-		D651618F22CC75EF002AE0DC /* ProductClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D651618E22CC75EF002AE0DC /* ProductClass.swift */; };
+		D651618F22CC75EF002AE0DC /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = D651618E22CC75EF002AE0DC /* Product.swift */; };
 		D675423022C9C8D900A319D4 /* CategoryMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D675422F22C9C8D900A319D4 /* CategoryMenuVC.swift */; };
 		D675423822C9DE4C00A319D4 /* CategoryCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D675423622C9DE4C00A319D4 /* CategoryCVC.swift */; };
 		D675423922C9DE4C00A319D4 /* CategoryCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D675423722C9DE4C00A319D4 /* CategoryCVC.xib */; };
@@ -32,6 +32,8 @@
 		D6C6010422CBA110001ED3C8 /* NotoSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D675423522C9CBD000A319D4 /* NotoSans-Medium.ttf */; };
 		D6C6010622CBC916001ED3C8 /* PeriodicalProductVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C6010522CBC916001ED3C8 /* PeriodicalProductVC.swift */; };
 		D6C6010822CBC9F9001ED3C8 /* ProductList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6C6010722CBC9F9001ED3C8 /* ProductList.storyboard */; };
+		D6FDA83422CCAE0100866209 /* PeriodicalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FDA83222CCAE0100866209 /* PeriodicalCell.swift */; };
+		D6FDA83522CCAE0100866209 /* PeriodicalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6FDA83322CCAE0100866209 /* PeriodicalCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,7 +50,7 @@
 		D651618622CC6637002AE0DC /* PeriodicalTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = PeriodicalTVC.xib; path = /Users/junslim11/Desktop/Box/Box/PeriodicalTVC.xib; sourceTree = "<absolute>"; };
 		D651618822CC6711002AE0DC /* NotoSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Light.ttf"; sourceTree = "<group>"; };
 		D651618C22CC6D49002AE0DC /* productCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = productCell.swift; sourceTree = "<group>"; };
-		D651618E22CC75EF002AE0DC /* ProductClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductClass.swift; sourceTree = "<group>"; };
+		D651618E22CC75EF002AE0DC /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		D675422F22C9C8D900A319D4 /* CategoryMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMenuVC.swift; sourceTree = "<group>"; };
 		D675423522C9CBD000A319D4 /* NotoSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Medium.ttf"; sourceTree = "<group>"; };
 		D675423622C9DE4C00A319D4 /* CategoryCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCVC.swift; sourceTree = "<group>"; };
@@ -66,6 +68,8 @@
 		D6AFB2C022C8F922007F6A3D /* UIColor_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor_Extension.swift; sourceTree = "<group>"; };
 		D6C6010522CBC916001ED3C8 /* PeriodicalProductVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicalProductVC.swift; sourceTree = "<group>"; };
 		D6C6010722CBC9F9001ED3C8 /* ProductList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProductList.storyboard; sourceTree = "<group>"; };
+		D6FDA83222CCAE0100866209 /* PeriodicalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicalCell.swift; sourceTree = "<group>"; };
+		D6FDA83322CCAE0100866209 /* PeriodicalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PeriodicalCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +134,8 @@
 				D675422F22C9C8D900A319D4 /* CategoryMenuVC.swift */,
 				D60A8FCE22C91F5800086350 /* HomeVC.swift */,
 				D6C6010522CBC916001ED3C8 /* PeriodicalProductVC.swift */,
+				D6FDA83222CCAE0100866209 /* PeriodicalCell.swift */,
+				D6FDA83322CCAE0100866209 /* PeriodicalCell.xib */,
 				D6AFB2BC22C8AE3B007F6A3D /* ViewController.swift */,
 			);
 			path = ViewControllers;
@@ -174,7 +180,7 @@
 				D651618B22CC6987002AE0DC /* Fonts */,
 				D6AFB2AA22C8A668007F6A3D /* AppDelegate.swift */,
 				D675423A22CA700100A319D4 /* CategoryItem.swift */,
-				D651618E22CC75EF002AE0DC /* ProductClass.swift */,
+				D651618E22CC75EF002AE0DC /* Product.swift */,
 				D6AFB2B122C8A669007F6A3D /* Assets.xcassets */,
 				D6AFB2B622C8A669007F6A3D /* Info.plist */,
 			);
@@ -259,6 +265,7 @@
 				D60A8FCB22C91D5800086350 /* NotoSans-SemiBold.ttf in Resources */,
 				D6C6010322CBA10A001ED3C8 /* SF-Pro-Text-Medium.otf in Resources */,
 				D6AFB2B022C8A668007F6A3D /* Main.storyboard in Resources */,
+				D6FDA83522CCAE0100866209 /* PeriodicalCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,8 +353,9 @@
 				D6C6010622CBC916001ED3C8 /* PeriodicalProductVC.swift in Sources */,
 				D675423822C9DE4C00A319D4 /* CategoryCVC.swift in Sources */,
 				D60A8FCA22C919E100086350 /* UIView_Extension.swift in Sources */,
+				D6FDA83422CCAE0100866209 /* PeriodicalCell.swift in Sources */,
 				D60600EB22CB3EC70037C57A /* ForUVC.swift in Sources */,
-				D651618F22CC75EF002AE0DC /* ProductClass.swift in Sources */,
+				D651618F22CC75EF002AE0DC /* Product.swift in Sources */,
 				D675423022C9C8D900A319D4 /* CategoryMenuVC.swift in Sources */,
 				D6AFB2C122C8F922007F6A3D /* UIColor_Extension.swift in Sources */,
 			);
