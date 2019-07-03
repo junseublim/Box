@@ -64,6 +64,7 @@ packageBtn.setTitleColor(UIColor.pumpkinOrange, for: .normal)
     func registerCVC() {
         let nibName = UINib(nibName: "CategoryCVC", bundle: nil)
         categoryCollection.register(nibName, forCellWithReuseIdentifier: "CategoryCVC")
+        
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return periodicImages.count
@@ -106,9 +107,16 @@ packageBtn.setTitleColor(UIColor.pumpkinOrange, for: .normal)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let dvc = storyboard?.instantiateViewController(withIdentifier: "Test") as! PeriodicalProductVC
-        
+        let dvc = UIStoryboard(name: "ProductList", bundle: nil).instantiateViewController(withIdentifier: "PeriodicalProductVC") as! PeriodicalProductVC
+        if buttonselection == 0 {
+            dvc.productTypeList = self.periodicNames
+        dvc.naviTitle = "정기배송"}
+        else if buttonselection == 1 {
+            dvc.productTypeList = self.packageNames
+            dvc.naviTitle = "패키지"
+        }
+        print("before push")
+        dvc.idx = indexPath.row
         navigationController?.pushViewController(dvc, animated: true)
-    
     }
 }

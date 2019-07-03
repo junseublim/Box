@@ -14,6 +14,9 @@
 		D60A8FCB22C91D5800086350 /* NotoSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D6AFB2BE22C8E920007F6A3D /* NotoSans-SemiBold.ttf */; };
 		D60A8FCD22C91E1A00086350 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D60A8FCC22C91E1A00086350 /* TabBar.storyboard */; };
 		D60A8FCF22C91F5800086350 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60A8FCE22C91F5800086350 /* HomeVC.swift */; };
+		D651618722CC6637002AE0DC /* PeriodicalTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D651618522CC6636002AE0DC /* PeriodicalTVC.swift */; };
+		D651618D22CC6D49002AE0DC /* productCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D651618C22CC6D49002AE0DC /* productCell.swift */; };
+		D651618F22CC75EF002AE0DC /* ProductClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D651618E22CC75EF002AE0DC /* ProductClass.swift */; };
 		D675423022C9C8D900A319D4 /* CategoryMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D675422F22C9C8D900A319D4 /* CategoryMenuVC.swift */; };
 		D675423822C9DE4C00A319D4 /* CategoryCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D675423622C9DE4C00A319D4 /* CategoryCVC.swift */; };
 		D675423922C9DE4C00A319D4 /* CategoryCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D675423722C9DE4C00A319D4 /* CategoryCVC.xib */; };
@@ -36,11 +39,16 @@
 		44BC48CC08C01CE86C936C18 /* Pods-Box.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Box.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Box/Pods-Box.debug.xcconfig"; sourceTree = "<group>"; };
 		450B82AB4B836788A2616404 /* Pods_Box.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Box.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D60600E522CB20500037C57A /* SF-Pro-Text-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Medium.otf"; sourceTree = "<group>"; };
-		D60600E822CB30F90037C57A /* ForUStartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ForUStartVC.swift; path = ../ForUStartVC.swift; sourceTree = "<group>"; };
+		D60600E822CB30F90037C57A /* ForUStartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForUStartVC.swift; sourceTree = "<group>"; };
 		D60600EA22CB3EC70037C57A /* ForUVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForUVC.swift; sourceTree = "<group>"; };
 		D60A8FC922C919E100086350 /* UIView_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView_Extension.swift; sourceTree = "<group>"; };
 		D60A8FCC22C91E1A00086350 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		D60A8FCE22C91F5800086350 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		D651618522CC6636002AE0DC /* PeriodicalTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PeriodicalTVC.swift; path = /Users/junslim11/Desktop/Box/Box/PeriodicalTVC.swift; sourceTree = "<absolute>"; };
+		D651618622CC6637002AE0DC /* PeriodicalTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = PeriodicalTVC.xib; path = /Users/junslim11/Desktop/Box/Box/PeriodicalTVC.xib; sourceTree = "<absolute>"; };
+		D651618822CC6711002AE0DC /* NotoSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Light.ttf"; sourceTree = "<group>"; };
+		D651618C22CC6D49002AE0DC /* productCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = productCell.swift; sourceTree = "<group>"; };
+		D651618E22CC75EF002AE0DC /* ProductClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductClass.swift; sourceTree = "<group>"; };
 		D675422F22C9C8D900A319D4 /* CategoryMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMenuVC.swift; sourceTree = "<group>"; };
 		D675423522C9CBD000A319D4 /* NotoSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Medium.ttf"; sourceTree = "<group>"; };
 		D675423622C9DE4C00A319D4 /* CategoryCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCVC.swift; sourceTree = "<group>"; };
@@ -84,6 +92,7 @@
 		D60A8FD022C91F9B00086350 /* StoryBoard */ = {
 			isa = PBXGroup;
 			children = (
+				D6AFB2B322C8A669007F6A3D /* LaunchScreen.storyboard */,
 				D6AFB2AE22C8A668007F6A3D /* Main.storyboard */,
 				D60A8FCC22C91E1A00086350 /* TabBar.storyboard */,
 				D6C6010722CBC9F9001ED3C8 /* ProductList.storyboard */,
@@ -96,10 +105,45 @@
 			children = (
 				D60A8FC922C919E100086350 /* UIView_Extension.swift */,
 				D6AFB2C022C8F922007F6A3D /* UIColor_Extension.swift */,
-				D675423622C9DE4C00A319D4 /* CategoryCVC.swift */,
-				D675423722C9DE4C00A319D4 /* CategoryCVC.xib */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D651618922CC6943002AE0DC /* xibFiles */ = {
+			isa = PBXGroup;
+			children = (
+				D675423622C9DE4C00A319D4 /* CategoryCVC.swift */,
+				D675423722C9DE4C00A319D4 /* CategoryCVC.xib */,
+				D651618522CC6636002AE0DC /* PeriodicalTVC.swift */,
+				D651618622CC6637002AE0DC /* PeriodicalTVC.xib */,
+				D651618C22CC6D49002AE0DC /* productCell.swift */,
+			);
+			path = xibFiles;
+			sourceTree = "<group>";
+		};
+		D651618A22CC6964002AE0DC /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D675423C22CAF88200A319D4 /* SearchVC.swift */,
+				D60600E822CB30F90037C57A /* ForUStartVC.swift */,
+				D60600EA22CB3EC70037C57A /* ForUVC.swift */,
+				D675422F22C9C8D900A319D4 /* CategoryMenuVC.swift */,
+				D60A8FCE22C91F5800086350 /* HomeVC.swift */,
+				D6C6010522CBC916001ED3C8 /* PeriodicalProductVC.swift */,
+				D6AFB2BC22C8AE3B007F6A3D /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D651618B22CC6987002AE0DC /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				D651618822CC6711002AE0DC /* NotoSans-Light.ttf */,
+				D60600E522CB20500037C57A /* SF-Pro-Text-Medium.otf */,
+				D675423522C9CBD000A319D4 /* NotoSans-Medium.ttf */,
+				D6AFB2BE22C8E920007F6A3D /* NotoSans-SemiBold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		D6AFB29E22C8A668007F6A3D = {
@@ -123,23 +167,16 @@
 		D6AFB2A922C8A668007F6A3D /* Box */ = {
 			isa = PBXGroup;
 			children = (
+				D651618922CC6943002AE0DC /* xibFiles */,
 				D60A8FD122C91FAC00086350 /* Extensions */,
 				D60A8FD022C91F9B00086350 /* StoryBoard */,
-				D6C6010522CBC916001ED3C8 /* PeriodicalProductVC.swift */,
-				D675423C22CAF88200A319D4 /* SearchVC.swift */,
-				D60600E822CB30F90037C57A /* ForUStartVC.swift */,
+				D651618A22CC6964002AE0DC /* ViewControllers */,
+				D651618B22CC6987002AE0DC /* Fonts */,
 				D6AFB2AA22C8A668007F6A3D /* AppDelegate.swift */,
-				D60600EA22CB3EC70037C57A /* ForUVC.swift */,
-				D675422F22C9C8D900A319D4 /* CategoryMenuVC.swift */,
 				D675423A22CA700100A319D4 /* CategoryItem.swift */,
-				D60A8FCE22C91F5800086350 /* HomeVC.swift */,
-				D6AFB2BC22C8AE3B007F6A3D /* ViewController.swift */,
+				D651618E22CC75EF002AE0DC /* ProductClass.swift */,
 				D6AFB2B122C8A669007F6A3D /* Assets.xcassets */,
-				D6AFB2B322C8A669007F6A3D /* LaunchScreen.storyboard */,
 				D6AFB2B622C8A669007F6A3D /* Info.plist */,
-				D60600E522CB20500037C57A /* SF-Pro-Text-Medium.otf */,
-				D675423522C9CBD000A319D4 /* NotoSans-Medium.ttf */,
-				D6AFB2BE22C8E920007F6A3D /* NotoSans-SemiBold.ttf */,
 			);
 			path = Box;
 			sourceTree = "<group>";
@@ -299,15 +336,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				D6AFB2BD22C8AE3B007F6A3D /* ViewController.swift in Sources */,
+				D651618722CC6637002AE0DC /* PeriodicalTVC.swift in Sources */,
 				D60A8FCF22C91F5800086350 /* HomeVC.swift in Sources */,
 				D675423B22CA700100A319D4 /* CategoryItem.swift in Sources */,
 				D675423D22CAF88200A319D4 /* SearchVC.swift in Sources */,
 				D6AFB2AB22C8A668007F6A3D /* AppDelegate.swift in Sources */,
 				D60600E922CB30F90037C57A /* ForUStartVC.swift in Sources */,
+				D651618D22CC6D49002AE0DC /* productCell.swift in Sources */,
 				D6C6010622CBC916001ED3C8 /* PeriodicalProductVC.swift in Sources */,
 				D675423822C9DE4C00A319D4 /* CategoryCVC.swift in Sources */,
 				D60A8FCA22C919E100086350 /* UIView_Extension.swift in Sources */,
 				D60600EB22CB3EC70037C57A /* ForUVC.swift in Sources */,
+				D651618F22CC75EF002AE0DC /* ProductClass.swift in Sources */,
 				D675423022C9C8D900A319D4 /* CategoryMenuVC.swift in Sources */,
 				D6AFB2C122C8F922007F6A3D /* UIColor_Extension.swift in Sources */,
 			);

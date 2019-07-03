@@ -452,52 +452,6 @@
             </objects>
             <point key="canvasLocation" x="2246" y="-296"/>
         </scene>
-        <!--Periodical ProductVC-->
-        <scene sceneID="29l-8B-N1a">
-            <objects>
-                <viewController storyboardIdentifier="Test" id="vH8-rG-zUw" customClass="PeriodicalProductVC" customModule="Box" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="jWo-fy-JVj">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="TsW-oX-Unh">
-                                <rect key="frame" x="0.0" y="44" width="375" height="66"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="TsW-oX-Unh" secondAttribute="height" multiplier="125:22" id="bEO-6T-gN6"/>
-                                    <constraint firstAttribute="width" constant="375" id="cqB-y6-FRe"/>
-                                </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="g3W-n4-1eS">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="4dQ-NE-d8f">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </view>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="TsW-oX-Unh" firstAttribute="top" secondItem="yoj-sc-KiV" secondAttribute="top" id="cQK-ZH-bp4"/>
-                            <constraint firstItem="TsW-oX-Unh" firstAttribute="leading" secondItem="yoj-sc-KiV" secondAttribute="leading" id="tO0-TC-QXj"/>
-                            <constraint firstItem="yoj-sc-KiV" firstAttribute="trailing" secondItem="TsW-oX-Unh" secondAttribute="trailing" id="tcx-t1-HKp"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="yoj-sc-KiV"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Jbc-tQ-EqP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3103.1999999999998" y="-296.30541871921184"/>
-        </scene>
         <!--카테고리-->
         <scene sceneID="dU5-RQ-JME">
             <objects>

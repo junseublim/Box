@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSans-Light.ttf">
+            <string>NotoSans-Light</string>
+        </array>
+        <array key="NotoSans-Medium.ttf">
+            <string>NotoSans-Medium</string>
+        </array>
+        <array key="NotoSans-SemiBold.ttf">
+            <string>NotoSans-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PeriodicalTVC" rowHeight="123" id="KGk-i7-Jjw" customClass="PeriodicalTVC" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="153"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="152.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Ii-og-Ykz">
+                        <rect key="frame" x="0.0" y="17" width="119.5" height="119.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="1Ii-og-Ykz" secondAttribute="height" multiplier="1:1" id="4oM-6G-dUj"/>
+                            <constraint firstAttribute="height" constant="119.5" id="agw-B6-wGr"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="brand" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5g-cH-UIK">
+                        <rect key="frame" x="132.5" y="16" width="30" height="15"/>
+                        <fontDescription key="fontDescription" name="NotoSans-Light" family="Noto Sans" pointSize="11"/>
+                        <color key="textColor" red="0.12941176469999999" green="0.1450980392" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ProductName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WOT-No-jNc">
+                        <rect key="frame" x="132.5" y="31" width="86.5" height="18"/>
+                        <fontDescription key="fontDescription" name="NotoSans-Medium" family="Noto Sans" pointSize="13"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="priceBeforeSale" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i8w-wZ-EGG">
+                        <rect key="frame" x="132.5" y="59" width="78.5" height="15"/>
+                        <fontDescription key="fontDescription" name="NotoSans-Light" family="Noto Sans" pointSize="11"/>
+                        <color key="textColor" red="0.52549019607843139" green="0.55686274509803924" blue="0.58823529411764708" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="finalPrice" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rWx-CC-mEv">
+                        <rect key="frame" x="132.5" y="74" width="78.5" height="23.5"/>
+                        <fontDescription key="fontDescription" name="NotoSans-SemiBold" family="Noto Sans" pointSize="17"/>
+                        <color key="textColor" red="0.12941176469999999" green="0.1450980392" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X4z-Pf-Dir">
+                        <rect key="frame" x="211" y="59" width="10" height="15"/>
+                        <fontDescription key="fontDescription" name="NotoSans-Medium" family="Noto Sans" pointSize="11"/>
+                        <color key="textColor" red="0.52549019610000003" green="0.5568627451" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="1Ii-og-Ykz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="25v-Ta-R16"/>
+                    <constraint firstItem="rWx-CC-mEv" firstAttribute="leading" secondItem="1Ii-og-Ykz" secondAttribute="trailing" constant="13" id="4bh-SY-vOB"/>
+                    <constraint firstItem="i8w-wZ-EGG" firstAttribute="leading" secondItem="1Ii-og-Ykz" secondAttribute="trailing" constant="13" id="A79-uw-rqw"/>
+                    <constraint firstItem="1Ii-og-Ykz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="17" id="LN8-Pg-dGd"/>
+                    <constraint firstItem="X4z-Pf-Dir" firstAttribute="leading" secondItem="i8w-wZ-EGG" secondAttribute="trailing" id="RxJ-EI-fnl"/>
+                    <constraint firstItem="WOT-No-jNc" firstAttribute="top" secondItem="y5g-cH-UIK" secondAttribute="bottom" id="U0V-aR-2b4"/>
+                    <constraint firstItem="i8w-wZ-EGG" firstAttribute="top" secondItem="WOT-No-jNc" secondAttribute="bottom" constant="10" id="Wo0-t2-leH"/>
+                    <constraint firstItem="rWx-CC-mEv" firstAttribute="top" secondItem="i8w-wZ-EGG" secondAttribute="bottom" id="ZwA-UM-XWY"/>
+                    <constraint firstItem="WOT-No-jNc" firstAttribute="leading" secondItem="1Ii-og-Ykz" secondAttribute="trailing" constant="13" id="eq9-y1-8Qk"/>
+                    <constraint firstItem="y5g-cH-UIK" firstAttribute="leading" secondItem="1Ii-og-Ykz" secondAttribute="trailing" constant="13" id="liR-3X-TId"/>
+                    <constraint firstItem="X4z-Pf-Dir" firstAttribute="centerY" secondItem="i8w-wZ-EGG" secondAttribute="centerY" id="nDf-2H-khG"/>
+                    <constraint firstAttribute="bottom" secondItem="1Ii-og-Ykz" secondAttribute="bottom" constant="16" id="vz9-IG-eju"/>
+                    <constraint firstItem="y5g-cH-UIK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="zOj-IX-wu7"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <inset key="separatorInset" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
+            <connections>
+                <outlet property="finalPrice" destination="rWx-CC-mEv" id="9y2-x6-mmr"/>
+                <outlet property="priceBeforeSale" destination="i8w-wZ-EGG" id="1Fz-HF-IY3"/>
+                <outlet property="productBrand" destination="y5g-cH-UIK" id="hMs-bs-3EV"/>
+                <outlet property="productImg" destination="1Ii-og-Ykz" id="qgf-bj-LDb"/>
+                <outlet property="productName" destination="WOT-No-jNc" id="DZr-ia-cIj"/>
+            </connections>
+            <point key="canvasLocation" x="34.782608695652179" y="33.816964285714285"/>
+        </tableViewCell>
+    </objects>
+</document>
