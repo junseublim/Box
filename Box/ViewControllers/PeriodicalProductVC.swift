@@ -69,7 +69,7 @@ class PeriodicalProductVC: UIViewController {
         let cartBTN = UIBarButtonItem(image: UIImage(named: "cartIcon"),
                                       style: .plain,
                                       target: self,
-                                      action: #selector(self.pop))
+                                      action: #selector(self.push))
         navigationItem.rightBarButtonItem = cartBTN
         navigationItem.rightBarButtonItem?.tintColor = color
         navigationController?.interactivePopGestureRecognizer?.delegate = self as? UIGestureRecognizerDelegate
@@ -86,6 +86,15 @@ class PeriodicalProductVC: UIViewController {
     }
     @objc func pop(){
         self.navigationController?.popViewController(animated: true)
+    }
+    @objc func push() {
+        print("touched")
+        let periodicNames = ["생수/음료", "세제/섬유유연제", "욕실용품","휴지/물티슈", "청소용품", "주방용품","디퓨저/방향제", "디퓨저/방향제"]
+        let dvc = UIStoryboard(name: "ProductList", bundle: nil).instantiateViewController(withIdentifier: "PeriodicalProductVC") as! PeriodicalProductVC
+        dvc.productTypeList = periodicNames
+        dvc.naviTitle = "정기배송"
+         navigationController?.pushViewController(dvc, animated: true)
+        
     }
 }
 
@@ -145,9 +154,10 @@ extension PeriodicalProductVC : UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let dvc = storyboard?.instantiateViewController(withIdentifier: "ProductDetailVC") as! ProductDetailVC
-        
-
-        navigationController?.pushViewController(dvc, animated: true)
+        let height = self.view.frame.height
+        dvc.viewHeight = height
+       dvc.product = self.products[indexPath.row]
+    navigationController?.pushViewController(dvc, animated: true)
     }
 }
 extension PeriodicalProductVC : UITableViewDataSource {

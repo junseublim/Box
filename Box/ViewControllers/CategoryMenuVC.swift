@@ -110,7 +110,7 @@ packageBtn.setTitleColor(UIColor.pumpkinOrange, for: .normal)
         let dvc = UIStoryboard(name: "ProductList", bundle: nil).instantiateViewController(withIdentifier: "PeriodicalProductVC") as! PeriodicalProductVC
         if buttonselection == 0 {
             dvc.productTypeList = self.periodicNames
-        dvc.naviTitle = "정기배송"}
+            dvc.naviTitle = "정기배송"}
         else if buttonselection == 1 {
             dvc.productTypeList = self.packageNames
             dvc.naviTitle = "패키지"

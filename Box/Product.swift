@@ -15,7 +15,7 @@ class Product {
     var icon: String?
     var priceBeforeSale: String?
     var finalPrice: String?
-    
+
     
     init?(name: String, icon: String, brand: String, priceBeforeSale: String, finalPrice: String) {
         self.name = name

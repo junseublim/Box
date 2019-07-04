@@ -11,13 +11,12 @@ import UIKit
 class HomeVC: UIViewController {
 
     @IBOutlet var pageControl: UIPageControl!
-    @IBOutlet var cartBtn: UIButton!
+   // @IBOutlet var cartBtn: UIButton!
     @IBOutlet var scrollView: UIScrollView!
     override func viewDidLoad() {
         scrollView.contentSize.width = self.view.frame.width * CGFloat(4)
         createviews()
         scrollView.delegate = self
-        cartBtn.tintColor = UIColor.darkGrey
     }
     
     func createviews() {
@@ -96,6 +95,14 @@ class HomeVC: UIViewController {
         label2.heightAnchor.constraint(equalToConstant: 27).isActive = true
         
         
+    }
+    @IBAction func moveToCart(_ sender: Any) {
+        print("touched")
+        let periodicNames = ["생수/음료", "세제/섬유유연제", "욕실용품","휴지/물티슈", "청소용품", "주방용품","디퓨저/방향제", "디퓨저/방향제"]
+        let dvc = UIStoryboard(name: "ProductList", bundle: nil).instantiateViewController(withIdentifier: "PeriodicalProductVC") as! PeriodicalProductVC
+        dvc.productTypeList = periodicNames
+        dvc.naviTitle = "정기배송"
+        navigationController?.present(dvc, animated: true, completion: nil)
     }
 }
 

@@ -29,39 +29,35 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U2g-We-rTR">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
                                 <subviews>
-                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="lA3-FU-xyp">
-                                        <rect key="frame" x="20" y="580" width="39" height="37"/>
-                                    </pageControl>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ouY-Kw-Jae">
+                                        <rect key="frame" x="329" y="52" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </button>
                                 </subviews>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bNm-qa-PbH">
-                                <rect key="frame" x="335" y="53" width="24" height="24"/>
-                                <state key="normal" image="cartIcon"/>
-                            </button>
+                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="lA3-FU-xyp">
+                                <rect key="frame" x="168" y="387" width="39" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="jYn-R0-uw3" firstAttribute="top" secondItem="U2g-We-rTR" secondAttribute="top" constant="44" id="366-u0-TIP"/>
                             <constraint firstItem="jYn-R0-uw3" firstAttribute="bottom" secondItem="U2g-We-rTR" secondAttribute="bottom" id="3rq-xw-kZd"/>
-                            <constraint firstItem="lA3-FU-xyp" firstAttribute="leading" secondItem="jYn-R0-uw3" secondAttribute="leading" constant="20" id="5uJ-BP-Lho"/>
-                            <constraint firstItem="bNm-qa-PbH" firstAttribute="top" secondItem="jYn-R0-uw3" secondAttribute="top" constant="9" id="bbQ-k9-NXq"/>
                             <constraint firstItem="U2g-We-rTR" firstAttribute="leading" secondItem="jYn-R0-uw3" secondAttribute="leading" id="c2r-JM-O2C"/>
-                            <constraint firstItem="lA3-FU-xyp" firstAttribute="top" secondItem="jYn-R0-uw3" secondAttribute="top" constant="536" id="kCL-aA-Jg9"/>
                             <constraint firstItem="jYn-R0-uw3" firstAttribute="trailing" secondItem="U2g-We-rTR" secondAttribute="trailing" id="kvm-ai-s1F"/>
-                            <constraint firstItem="jYn-R0-uw3" firstAttribute="trailing" secondItem="bNm-qa-PbH" secondAttribute="trailing" constant="16" id="vl0-Z3-XAf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jYn-R0-uw3"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="홈" image="homeIcon" id="tGC-Gi-aJ8"/>
                     <connections>
-                        <outlet property="cartBtn" destination="bNm-qa-PbH" id="ibs-Sm-bnC"/>
                         <outlet property="pageControl" destination="lA3-FU-xyp" id="DDD-jL-b6h"/>
                         <outlet property="scrollView" destination="U2g-We-rTR" id="bOn-ha-v7a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hy3-Pb-q28" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1312.8" y="-978.32512315270935"/>
+            <point key="canvasLocation" x="1842" y="-1003"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="1Zh-MX-31U">
@@ -660,8 +656,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wch-1x-pBv">
-                                <rect key="frame" x="16" y="559.66666666666663" width="343" height="52"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wch-1x-pBv">
+                                <rect key="frame" x="149" y="113" width="343" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Wch-1x-pBv" secondAttribute="height" multiplier="343:52" id="65n-80-srJ"/>
                                     <constraint firstAttribute="height" constant="52" id="DzL-SR-c7M"/>
