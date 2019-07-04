@@ -14,7 +14,6 @@
 		D60A8FCB22C91D5800086350 /* NotoSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D6AFB2BE22C8E920007F6A3D /* NotoSans-SemiBold.ttf */; };
 		D60A8FCD22C91E1A00086350 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D60A8FCC22C91E1A00086350 /* TabBar.storyboard */; };
 		D60A8FCF22C91F5800086350 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60A8FCE22C91F5800086350 /* HomeVC.swift */; };
-		D651618722CC6637002AE0DC /* PeriodicalTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D651618522CC6636002AE0DC /* PeriodicalTVC.swift */; };
 		D651618D22CC6D49002AE0DC /* productCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D651618C22CC6D49002AE0DC /* productCell.swift */; };
 		D651618F22CC75EF002AE0DC /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = D651618E22CC75EF002AE0DC /* Product.swift */; };
 		D675423022C9C8D900A319D4 /* CategoryMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D675422F22C9C8D900A319D4 /* CategoryMenuVC.swift */; };
@@ -34,6 +33,9 @@
 		D6C6010822CBC9F9001ED3C8 /* ProductList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6C6010722CBC9F9001ED3C8 /* ProductList.storyboard */; };
 		D6FDA83422CCAE0100866209 /* PeriodicalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FDA83222CCAE0100866209 /* PeriodicalCell.swift */; };
 		D6FDA83522CCAE0100866209 /* PeriodicalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6FDA83322CCAE0100866209 /* PeriodicalCell.xib */; };
+		D6FDA85722CCE04200866209 /* PackageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FDA85522CCE04200866209 /* PackageCell.swift */; };
+		D6FDA85822CCE04200866209 /* PackageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6FDA85622CCE04200866209 /* PackageCell.xib */; };
+		D6FDA85A22CDBFE900866209 /* ProductDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FDA85922CDBFE900866209 /* ProductDetailVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,8 +48,6 @@
 		D60A8FC922C919E100086350 /* UIView_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView_Extension.swift; sourceTree = "<group>"; };
 		D60A8FCC22C91E1A00086350 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		D60A8FCE22C91F5800086350 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
-		D651618522CC6636002AE0DC /* PeriodicalTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PeriodicalTVC.swift; path = /Users/junslim11/Desktop/Box/Box/PeriodicalTVC.swift; sourceTree = "<absolute>"; };
-		D651618622CC6637002AE0DC /* PeriodicalTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = PeriodicalTVC.xib; path = /Users/junslim11/Desktop/Box/Box/PeriodicalTVC.xib; sourceTree = "<absolute>"; };
 		D651618822CC6711002AE0DC /* NotoSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Light.ttf"; sourceTree = "<group>"; };
 		D651618C22CC6D49002AE0DC /* productCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = productCell.swift; sourceTree = "<group>"; };
 		D651618E22CC75EF002AE0DC /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
@@ -70,6 +70,9 @@
 		D6C6010722CBC9F9001ED3C8 /* ProductList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProductList.storyboard; sourceTree = "<group>"; };
 		D6FDA83222CCAE0100866209 /* PeriodicalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicalCell.swift; sourceTree = "<group>"; };
 		D6FDA83322CCAE0100866209 /* PeriodicalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PeriodicalCell.xib; sourceTree = "<group>"; };
+		D6FDA85522CCE04200866209 /* PackageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageCell.swift; sourceTree = "<group>"; };
+		D6FDA85622CCE04200866209 /* PackageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PackageCell.xib; sourceTree = "<group>"; };
+		D6FDA85922CDBFE900866209 /* ProductDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,9 +121,11 @@
 			children = (
 				D675423622C9DE4C00A319D4 /* CategoryCVC.swift */,
 				D675423722C9DE4C00A319D4 /* CategoryCVC.xib */,
-				D651618522CC6636002AE0DC /* PeriodicalTVC.swift */,
-				D651618622CC6637002AE0DC /* PeriodicalTVC.xib */,
 				D651618C22CC6D49002AE0DC /* productCell.swift */,
+				D6FDA83222CCAE0100866209 /* PeriodicalCell.swift */,
+				D6FDA83322CCAE0100866209 /* PeriodicalCell.xib */,
+				D6FDA85522CCE04200866209 /* PackageCell.swift */,
+				D6FDA85622CCE04200866209 /* PackageCell.xib */,
 			);
 			path = xibFiles;
 			sourceTree = "<group>";
@@ -134,8 +139,7 @@
 				D675422F22C9C8D900A319D4 /* CategoryMenuVC.swift */,
 				D60A8FCE22C91F5800086350 /* HomeVC.swift */,
 				D6C6010522CBC916001ED3C8 /* PeriodicalProductVC.swift */,
-				D6FDA83222CCAE0100866209 /* PeriodicalCell.swift */,
-				D6FDA83322CCAE0100866209 /* PeriodicalCell.xib */,
+				D6FDA85922CDBFE900866209 /* ProductDetailVC.swift */,
 				D6AFB2BC22C8AE3B007F6A3D /* ViewController.swift */,
 			);
 			path = ViewControllers;
@@ -262,6 +266,7 @@
 				D6C6010422CBA110001ED3C8 /* NotoSans-Medium.ttf in Resources */,
 				D6AFB2B522C8A669007F6A3D /* LaunchScreen.storyboard in Resources */,
 				D6AFB2B222C8A669007F6A3D /* Assets.xcassets in Resources */,
+				D6FDA85822CCE04200866209 /* PackageCell.xib in Resources */,
 				D60A8FCB22C91D5800086350 /* NotoSans-SemiBold.ttf in Resources */,
 				D6C6010322CBA10A001ED3C8 /* SF-Pro-Text-Medium.otf in Resources */,
 				D6AFB2B022C8A668007F6A3D /* Main.storyboard in Resources */,
@@ -343,7 +348,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D6AFB2BD22C8AE3B007F6A3D /* ViewController.swift in Sources */,
-				D651618722CC6637002AE0DC /* PeriodicalTVC.swift in Sources */,
 				D60A8FCF22C91F5800086350 /* HomeVC.swift in Sources */,
 				D675423B22CA700100A319D4 /* CategoryItem.swift in Sources */,
 				D675423D22CAF88200A319D4 /* SearchVC.swift in Sources */,
@@ -351,6 +355,8 @@
 				D60600E922CB30F90037C57A /* ForUStartVC.swift in Sources */,
 				D651618D22CC6D49002AE0DC /* productCell.swift in Sources */,
 				D6C6010622CBC916001ED3C8 /* PeriodicalProductVC.swift in Sources */,
+				D6FDA85A22CDBFE900866209 /* ProductDetailVC.swift in Sources */,
+				D6FDA85722CCE04200866209 /* PackageCell.swift in Sources */,
 				D675423822C9DE4C00A319D4 /* CategoryCVC.swift in Sources */,
 				D60A8FCA22C919E100086350 /* UIView_Extension.swift in Sources */,
 				D6FDA83422CCAE0100866209 /* PeriodicalCell.swift in Sources */,

@@ -14,6 +14,7 @@ class PeriodicalProductVC: UIViewController {
     var idx : Int?
     var naviTitle: String?
     var products = [Product]()
+    var productCount = 0
     @IBOutlet var setOrderBtn: UIButton!
     @IBOutlet var numOfProducts: UILabel!
     @IBOutlet var productListTV: UITableView!
@@ -31,7 +32,10 @@ class PeriodicalProductVC: UIViewController {
         setTestItems()
         let nibName = UINib(nibName: "PeriodicalCell", bundle: nil)
         productListTV.register(nibName, forCellReuseIdentifier: "PeriodicalCell")
-        }
+        productCount = products.count
+        numOfProducts.text = "\(productCount)개의 상품"
+    }
+    
     func testfunc() {
         
     }
@@ -84,8 +88,16 @@ class PeriodicalProductVC: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
 }
-extension PeriodicalProductVC : UICollectionViewDelegate {
-    
+
+extension PeriodicalProductVC: UICollectionViewDelegate {
+   
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        idx = indexPath.row
+        productCount = products.count
+        productTypeCV.reloadData()
+        productListTV.reloadData()
+    }
 }
 extension PeriodicalProductVC: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -95,11 +107,18 @@ extension PeriodicalProductVC: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = productTypeCV.dequeueReusableCell(withReuseIdentifier: "productCell", for: indexPath) as! productCell
         cell.productTypeName.text = productTypeList[indexPath.row]
-        return cell
-    }
-    
-    
+        cell.setBorder(borderColor: UIColor.lightBlueGrey, borderWidth: 0.5)
+            if indexPath.row == idx {
+                cell.productTypeName.textColor = UIColor.pumpkinOrange
+             return cell
+        }
+            cell.productTypeName.textColor = UIColor.darkGrey
+                 return cell
 }
+}
+
+    
+
 extension PeriodicalProductVC: UICollectionViewDelegateFlowLayout
 {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -123,8 +142,13 @@ extension PeriodicalProductVC: UICollectionViewDelegateFlowLayout
 }
 
 extension PeriodicalProductVC : UITableViewDelegate {
-    
-    
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let dvc = storyboard?.instantiateViewController(withIdentifier: "ProductDetailVC") as! ProductDetailVC
+        
+
+        navigationController?.pushViewController(dvc, animated: true)
+    }
 }
 extension PeriodicalProductVC : UITableViewDataSource {
     

@@ -115,7 +115,6 @@ packageBtn.setTitleColor(UIColor.pumpkinOrange, for: .normal)
             dvc.productTypeList = self.packageNames
             dvc.naviTitle = "패키지"
         }
-        print("before push")
         dvc.idx = indexPath.row
         navigationController?.pushViewController(dvc, animated: true)
     }
