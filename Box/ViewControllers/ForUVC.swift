@@ -12,6 +12,7 @@ import RangeSeekSlider
 class ForUVC: UIViewController  {
     var rankings = ["청소", "요리", "수면", "인테리어", "옷 관리"]
     var rankingsreset = ["청소", "요리", "수면", "인테리어", "옷 관리"]
+    var stage = 0
     @IBOutlet var durationPrepare: UIButton!
     @IBOutlet var durationOne: UIButton!
     @IBOutlet var durationOneToTwo: UIButton!
@@ -76,9 +77,14 @@ class ForUVC: UIViewController  {
     }
 
     @IBAction func sendSetting(_ sender: Any) {
-        print(priceRanger.selectedMinValue)
-        print(priceRanger.selectedMaxValue)
-        print(rankings)
+        let dvc = self.storyboard?.instantiateViewController(withIdentifier: "ForUResultPageVC") as! ForUResultPageVC
+        dvc.minprice = Int(priceRanger.selectedMinValue)
+        dvc.maxprice = Int(priceRanger.selectedMaxValue)
+        dvc.first = (rankTV.cellForRow(at: IndexPath(row: 0, section: 0))?.textLabel!.text)!
+        dvc.second = (rankTV.cellForRow(at: IndexPath(row: 1, section: 0))?.textLabel!.text)!
+        dvc.fifth = (rankTV.cellForRow(at: IndexPath(row: 4, section: 0))?.textLabel!.text)!
+        dvc.stage = stage
+        self.navigationController?.pushViewController(dvc, animated: true)
     }
     
     @IBAction func resetAll(_ sender: Any) {
@@ -139,21 +145,25 @@ class ForUVC: UIViewController  {
             selected(button: durationOne, selected: false)
             selected(button: durationOneToTwo, selected: false)
             selected(button: durationTwo, selected: false)
+            stage = 0
         case "1년 미만":
             selected(button: durationPrepare, selected: false)
             selected(button: durationOne, selected: true)
             selected(button: durationOneToTwo, selected: false)
             selected(button: durationTwo, selected: false)
+            stage = 1
         case "1년 이상~2년 미만":
             selected(button: durationPrepare, selected: false)
             selected(button: durationOne, selected: false)
             selected(button: durationOneToTwo, selected: true)
             selected(button: durationTwo, selected: false)
+            stage = 2
         case "2년 이상":
             selected(button: durationPrepare, selected: false)
             selected(button: durationOne, selected: false)
             selected(button: durationOneToTwo, selected: false)
             selected(button: durationTwo, selected: true)
+            stage = 3
         default:
             break
         }

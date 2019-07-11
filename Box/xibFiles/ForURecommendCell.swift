@@ -9,8 +9,10 @@
 import UIKit
 
 class ForURecommendCell: UICollectionViewCell {
-    @IBOutlet var celllImage: UIImageView!
+    @IBOutlet var bgView: UIView!
+    @IBOutlet var cellImage: UIImageView!
     @IBOutlet var cellName: UILabel!
     
     @IBOutlet var cellPrice: UILabel!
+    
 }

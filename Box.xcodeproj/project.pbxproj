@@ -26,6 +26,7 @@
 		D60A8FCB22C91D5800086350 /* NotoSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D6AFB2BE22C8E920007F6A3D /* NotoSans-SemiBold.ttf */; };
 		D60A8FCD22C91E1A00086350 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D60A8FCC22C91E1A00086350 /* TabBar.storyboard */; };
 		D60A8FCF22C91F5800086350 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60A8FCE22C91F5800086350 /* HomeVC.swift */; };
+		D60C92A122D78FEA005D5AFA /* ForUList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60C92A022D78FEA005D5AFA /* ForUList.swift */; };
 		D60E593A22D3900E00ED2A68 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60E593922D3900E00ED2A68 /* APIConstants.swift */; };
 		D60E595822D4768600ED2A68 /* Regular.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60E595322D4768600ED2A68 /* Regular.swift */; };
 		D60E595922D4768600ED2A68 /* ResponseString.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60E595422D4768600ED2A68 /* ResponseString.swift */; };
@@ -135,6 +136,7 @@
 		D60A8FC922C919E100086350 /* UIView_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView_Extension.swift; sourceTree = "<group>"; };
 		D60A8FCC22C91E1A00086350 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		D60A8FCE22C91F5800086350 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		D60C92A022D78FEA005D5AFA /* ForUList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForUList.swift; sourceTree = "<group>"; };
 		D60E593922D3900E00ED2A68 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		D60E595322D4768600ED2A68 /* Regular.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regular.swift; sourceTree = "<group>"; };
 		D60E595422D4768600ED2A68 /* ResponseString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseString.swift; sourceTree = "<group>"; };
@@ -301,6 +303,7 @@
 				D60E595622D4768600ED2A68 /* ResponseObject.swift */,
 				D6CFDAD322D5C21200E58D0D /* ForUPackage.swift */,
 				D6CFDAD522D5C22B00E58D0D /* ForUProduct.swift */,
+				D60C92A022D78FEA005D5AFA /* ForUList.swift */,
 				D60E595422D4768600ED2A68 /* ResponseString.swift */,
 				D6067CC622D516C700BD15A5 /* ResponseSign.swift */,
 				D60E595322D4768600ED2A68 /* Regular.swift */,
@@ -682,6 +685,7 @@
 				D60585C922D2271A009DAE1A /* PaymentVC.swift in Sources */,
 				D6FDA85722CCE04200866209 /* PackageCell.swift in Sources */,
 				D6CFDADE22D5DA3000E58D0D /* PackageDetail2Cell.swift in Sources */,
+				D60C92A122D78FEA005D5AFA /* ForUList.swift in Sources */,
 				D60E598422D4A3AF00ED2A68 /* Package.swift in Sources */,
 				D60E595A22D4768600ED2A68 /* ResponseRegular.swift in Sources */,
 				D60E599922D4CF1200ED2A68 /* PackageDetailViewController.swift in Sources */,

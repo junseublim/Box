@@ -12,6 +12,7 @@ class ForUPackageCell: UICollectionViewCell {
     @IBOutlet var cellImage: UIImageView!
     @IBOutlet var cellName: UILabel!
     @IBOutlet var cellPrice: UILabel!
+    @IBOutlet var bgView: UIView!
     
     
 }

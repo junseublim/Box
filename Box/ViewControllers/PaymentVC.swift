@@ -30,6 +30,20 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         paymentTV.dataSource = self
         cartCount = appDelegate.cart[0].count + appDelegate.cart[1].count
         formatter.numberStyle = .decimal
+        setNaviBtn(color: UIColor.darkGrey)
+        navigationItem.title = "주문 결제"
+    }
+    func setNaviBtn(color: UIColor) {
+        let backBTN = UIBarButtonItem(image: UIImage(named: "buttonArrow"),
+                                      style: .plain,
+                                      target: self,
+                                      action: #selector(self.pop))
+        navigationItem.leftBarButtonItem = backBTN
+        navigationItem.leftBarButtonItem?.tintColor = color
+        navigationController?.interactivePopGestureRecognizer?.delegate = self as? UIGestureRecognizerDelegate
+    }
+    @objc func pop(){
+        self.navigationController?.popViewController(animated: true)
     }
     func registerTVC() {
         let nibName1 = UINib(nibName: "RegularDateCell", bundle: nil)
@@ -65,6 +79,11 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             }
         
         }
+    
+    @IBAction func PurchaseBtn(_ sender: Any) {
+        let dvc = UIStoryboard(name: "Cart", bundle: nil).instantiateViewController(withIdentifier: "OrderResultVC") as! OrderResultVC
+        self.present(dvc, animated: true)
+    }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 6
     }
@@ -179,7 +198,7 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             let cell = paymentTV.dequeueReusableCell(withIdentifier: "TotalPriceCell", for: indexPath) as! TotalPriceCell
             var totalPrice = 0
             for item in cart {
-                totalPrice += item.price!
+                totalPrice += item.price! * item.amount!
             }
             let formattedTotalPrice = formatter.string(from: NSNumber(value: totalPrice))
             cell.beforeDelivery.text = formattedTotalPrice

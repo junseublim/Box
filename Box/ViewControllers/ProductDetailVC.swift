@@ -185,18 +185,22 @@ class ProductDetailVC: UIViewController {
     @IBAction func putInCart(_ sender: Any) {
         let result = self.cart_RegularDAO.create(product_id: self.product_id, product_name: self.product_name, product_image: product_image, product_price: price, product_amount: self.count, product_duration: self.duration)
         if result == true {
+            for item in appDelegate.cart[0] {
+                if item.id == product_id {
+                    let rs = self.cart_RegularDAO.remove(product_id: self.product_id!)
+                    let failed = UIAlertController(title: "이미 상품이 장바구니에 있습니다.", message: "", preferredStyle: UIAlertController.Style.alert)
+                    let addedAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
+                    failed.addAction(addedAction)
+                    present(failed, animated: true, completion:  nil)
+                    return
+                }
+            }
             let added = UIAlertController(title: "상품이 장바구니에 담겼습니다.", message: "", preferredStyle: UIAlertController.Style.alert)
             let addedAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
             added.addAction(addedAction)
             present(added, animated: true, completion:  nil)
             appDelegate.cart[0].append(CartItem(id: product_id!, name: self.product_name!, image: self.product_image!, price: price, amount: count, duration: duration)!)
             
-        }
-        else {
-            let failed = UIAlertController(title: "이미 상품이 장바구니에 있습니다.", message: "", preferredStyle: UIAlertController.Style.alert)
-            let addedAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
-            failed.addAction(addedAction)
-            present(failed, animated: true, completion:  nil)
         }
     }
     @IBAction func purchaseTouched(_ sender: Any) {

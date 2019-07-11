@@ -7,10 +7,9 @@
 //
 
 import Foundation
-
 struct ForUProduct: Codable {
     let product_id: String?
     let main_img: String?
     let name: String?
-    let price: Int?
+    let saled_price: Int?
 }

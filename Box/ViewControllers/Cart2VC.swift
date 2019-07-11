@@ -76,6 +76,9 @@ class Cart2VC: UIViewController, UITableViewDelegate, UITableViewDataSource, Car
         navigationItem.leftBarButtonItem?.tintColor = color
         navigationController?.interactivePopGestureRecognizer?.delegate = self as? UIGestureRecognizerDelegate
     }
+    @objc func pop(){
+        self.navigationController?.popViewController(animated: true)
+    }
     
     @IBAction func selectedAll(_ sender: Any) {
         if selectAllBool == true {
@@ -102,9 +105,7 @@ class Cart2VC: UIViewController, UITableViewDelegate, UITableViewDataSource, Car
     func changeLabel() {
         
     }
-    @objc func pop(){
-        self.navigationController?.popViewController(animated: true)
-    }
+   
     
     func addAllprices() {
         var totalprice  = 0
@@ -185,7 +186,6 @@ class Cart2VC: UIViewController, UITableViewDelegate, UITableViewDataSource, Car
         cell.nameLabel.text = cart2[indexPath.row].name
         cell.priceLabel.text = formattedFinalPrice
         cell.durationBtn.isHidden = true
-        
         cell.productImg.imageFromUrl(cart2[indexPath.row].image!)
         cell.countBtn.setTitle("\(cart2[indexPath.row].amount!)개", for: .normal)
         cell.section = indexPath.section

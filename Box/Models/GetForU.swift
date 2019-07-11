@@ -5,7 +5,7 @@
 //  Created by Jun Seub Lim on 10/07/2019.
 //  Copyright © 2019 Jun Seub Lim. All rights reserved.
 //
-/*
+
 import Foundation
 import Alamofire
 
@@ -15,8 +15,8 @@ struct GetForU {
         "Content-Type" : "application/json"
     ]
     
-    func getForU(_ first: String,_ second: String,_ fifth: String,_ minprice: Int,_ minprice: Int, completion: @escaping (NetworkResult<Any>) -> Void) {
-        let tempUrl = APIConstants.ForUURL
+    func getForU(_ first: String,_ second: String,_ fifth: String,_ minprice: Int,_ maxprice: Int, completion: @escaping (NetworkResult<Any>) -> Void) {
+        let tempUrl = APIConstants.ForUURL + "?first=\(first)&second=\(second)&fifth=\(fifth)&minprice=\(minprice)&maxprice=\(maxprice)"
         let url: URL = URL(string: tempUrl.addingPercentEncoding(withAllowedCharacters:.urlQueryAllowed)!)!
         Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header).responseData {
             response in
@@ -31,7 +31,7 @@ struct GetForU {
                         case 200:
                             do {
                                 let decoder = JSONDecoder()
-                                let result = try decoder.decode(ResponseObject<PackageDetail<ProductInPackage>>.self, from: value)
+                                let result = try decoder.decode(ResponseObject<ForUList>.self, from: value)
                                 switch result.success {
                                 case true:
                                     print("case true")
@@ -61,4 +61,4 @@ struct GetForU {
         }
     }
 }
-*/
+
