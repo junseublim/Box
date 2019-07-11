@@ -43,7 +43,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ProductName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w0v-ck-BHs">
-                        <rect key="frame" x="119.5" y="32" width="86.5" height="18"/>
+                        <rect key="frame" x="119.5" y="32" width="207.5" height="18"/>
                         <fontDescription key="fontDescription" name="NotoSans-Medium" family="Noto Sans" pointSize="13"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -78,6 +78,8 @@
                     <constraint firstItem="d6K-wc-HuR" firstAttribute="centerY" secondItem="0CK-RR-9rp" secondAttribute="centerY" id="68X-hP-WAc"/>
                     <constraint firstItem="orB-b9-Vh7" firstAttribute="top" secondItem="w0v-ck-BHs" secondAttribute="bottom" constant="10" id="694-6e-Haq"/>
                     <constraint firstItem="0CK-RR-9rp" firstAttribute="leading" secondItem="D4v-NM-LlK" secondAttribute="trailing" constant="13" id="HJu-vP-fMa"/>
+                    <constraint firstAttribute="trailing" secondItem="w0v-ck-BHs" secondAttribute="trailing" constant="16" id="LYo-eg-9lr"/>
+                    <constraint firstAttribute="bottom" secondItem="D4v-NM-LlK" secondAttribute="bottom" constant="15" id="PBp-zX-LSD"/>
                     <constraint firstItem="evp-FU-Yyb" firstAttribute="leading" secondItem="D4v-NM-LlK" secondAttribute="trailing" constant="13" id="ZkK-Gr-VOU"/>
                     <constraint firstItem="SkJ-ey-rEZ" firstAttribute="leading" secondItem="orB-b9-Vh7" secondAttribute="trailing" id="cJe-6h-hLz"/>
                     <constraint firstAttribute="bottom" secondItem="0CK-RR-9rp" secondAttribute="bottom" constant="24" id="dRw-bS-MK6"/>

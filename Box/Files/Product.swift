@@ -13,16 +13,18 @@ class Product {
     var name: String?
     var brand: String?
     var icon: String?
-    var priceBeforeSale: String?
-    var finalPrice: String?
+    var priceBeforeSale: Int?
+    var finalPrice: Int?
+    var id: String?
 
     
-    init?(name: String, icon: String, brand: String, priceBeforeSale: String, finalPrice: String) {
+    init?(name: String, icon: String,  priceBeforeSale: Int, finalPrice: Int,id: String, brand: String = "") {
         self.name = name
         self.icon = icon
         self.brand = brand
         self.priceBeforeSale = priceBeforeSale
         self.finalPrice = finalPrice
+        self.id = id
         
     }
 }

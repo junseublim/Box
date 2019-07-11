@@ -10,6 +10,11 @@ import UIKit
 
 class PackageCell: UITableViewCell {
 
+    @IBOutlet var productImg: UIImageView!
+    @IBOutlet var productName: UILabel!
+    @IBOutlet var priceBeforeSale: UILabel!
+    @IBOutlet var finalPrice: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

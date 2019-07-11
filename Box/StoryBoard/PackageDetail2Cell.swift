@@ -1,22 +1,21 @@
 //
-//  CartVC.swift
+//  PackageDetail2Cell.swift
 //  Box
 //
-//  Created by Jun Seub Lim on 05/07/2019.
+//  Created by Jun Seub Lim on 09/07/2019.
 //  Copyright © 2019 Jun Seub Lim. All rights reserved.
 //
 
 import UIKit
 
-class Cart2VC: UIViewController {
+class PackageDetail2Cell: UIViewController {
 
-    @IBOutlet var tv: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
+
 
     /*
     // MARK: - Navigation

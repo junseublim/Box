@@ -10,11 +10,11 @@ import UIKit
 
 class CategoryMenuVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
    
-    
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     let periodicImages = ["categoryDeliveryImg1","categoryDeliveryImg2","categoryDeliveryImg3","categoryDeliveryImg4","categoryDeliveryImg5","categoryDeliveryImg6","categoryDeliveryImg7","categoryDeliveryImg8"]
-    let packageImages = ["categoryPackImg1","categoryPackImg2","categoryPackImg3","categoryPackImg4","categoryPackImg5", "categoryPackImg6", "categoryPackImg7", "categoryPackImg8"]
-    let periodicNames = ["생수/음료", "세제/섬유유연제", "욕실용품","휴지/물티슈", "청소용품", "주방용품","디퓨저/방향제", "디퓨저/방향제"]
-    let packageNames = ["입는건 중요해", "공간확보의 달인", "우리 집 관리", "홈카페", "포근하게 자기", "가전제품", "반려동물과 함께", "특별기획"]
+    let packageImages = ["categoryPackImg2","categoryPackImg6","categoryPackImg3","categoryPackImg4","categoryPackImg5", "categoryPackImg1", "categoryPackImg7", "categoryPackImg8"]
+    let periodicNames = ["생수/음료", "세제/섬유유연제", "욕실용품","휴지/물티슈", "청소용품", "주방용품","디퓨저/방향제", "반려동물용품"]
+    let packageNames = [ "공간확보의 달인","가전제품", "우리 집 관리", "홈카페", "포근하게 자기","입는건 중요해",  "반려동물과 함께", "특별기획"]
     @IBOutlet var categoryCollection: UICollectionView!
     @IBOutlet var periodicBtn: UIButton!
     @IBOutlet var packageBtn: UIButton!
@@ -53,6 +53,16 @@ packageBtn.setTitleColor(UIColor.pumpkinOrange, for: .normal)
         categoryCollection.reloadData()
     }
     
+    @IBAction func cart(_ sender: Any) {
+        var dvc : UIViewController?
+        if appDelegate.cart[0].isEmpty && appDelegate.cart[1].isEmpty == true {
+            dvc = UIStoryboard(name: "Cart", bundle: nil).instantiateViewController(withIdentifier: "EmptyVC")
+        }
+        else {
+        dvc = UIStoryboard(name: "Cart", bundle: nil).instantiateViewController(withIdentifier: "Cart2VC")
+        }
+        navigationController?.pushViewController(dvc!, animated: true)
+    }
     func setItemList() {
         for i in 0 ..< 8 {
             let item1 = CategoryItem(name: periodicNames[i], icon: periodicImages[i])
@@ -116,6 +126,8 @@ packageBtn.setTitleColor(UIColor.pumpkinOrange, for: .normal)
             dvc.naviTitle = "패키지"
         }
         dvc.idx = indexPath.row
+        dvc.buttonselection = self.buttonselection
         navigationController?.pushViewController(dvc, animated: true)
     }
 }
+

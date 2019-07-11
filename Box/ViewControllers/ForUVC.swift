@@ -9,7 +9,7 @@
 import UIKit
 import RangeSeekSlider
 
-class ForUVC: UIViewController {
+class ForUVC: UIViewController  {
     var rankings = ["청소", "요리", "수면", "인테리어", "옷 관리"]
     var rankingsreset = ["청소", "요리", "수면", "인테리어", "옷 관리"]
     @IBOutlet var durationPrepare: UIButton!
@@ -86,10 +86,20 @@ class ForUVC: UIViewController {
       //  priceRanger.selectedMaxValue = priceRanger.maxValue
       //  priceRanger.selectedMinValue = priceRanger.minValue
       //  priceRanger.reloadInputViews()
-       self.viewDidLoad()
+     
         rankings = rankingsreset
         rankTV.reloadData()
-
+        priceRanger.selectedMaxValue = 300000
+        priceRanger.selectedMinValue = 0
+        priceRanger.refreshValue()
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        let min = formatter.string(from: 0 as NSNumber)!
+        let max = formatter.string(from: 300000 as NSNumber)!
+        priceLabel.text = "\(min)원 ~ \(max)원"
+       
+        self.viewDidLoad()
+        
     }
     @IBAction func goBack(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -159,7 +169,6 @@ extension ForUVC: RangeSeekSliderDelegate{
          let max = formatter.string(from: maxValue as NSNumber)!
         priceLabel.text = "\(min)원 ~ \(max)원"
     }
-    
 }
 extension ForUVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {

@@ -9,7 +9,7 @@
 import UIKit
 
 class productCell: UICollectionViewCell {
-    
+    //카테고리 8개
     @IBOutlet var productView: UIView!
     @IBOutlet var productTypeName: UILabel!
     override func awakeFromNib() {
