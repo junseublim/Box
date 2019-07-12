@@ -1,4 +1,4 @@
-# ReadyForBox-iOS
+# 준비해박스-iOS
 
 ## Description
 * SOPT 24기 app-jam
