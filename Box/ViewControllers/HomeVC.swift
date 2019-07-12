@@ -14,7 +14,7 @@ class HomeVC: UIViewController {
     @IBOutlet var pageControl: UIPageControl!
    // @IBOutlet var cartBtn: UIButton!
     @IBOutlet var scrollView: UIScrollView!
-    
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var Banners = [Banner]()
     
     override func viewDidLoad() {
@@ -32,7 +32,6 @@ class HomeVC: UIViewController {
 
         
     }
-    
     func createviews() {
         let view1 = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
         let view2 = UIView(frame: CGRect(x: self.view.frame.width, y: 0, width: self.view.frame.width, height: self.view.frame.height))
@@ -100,7 +99,7 @@ func addLabel(view: UIView, i: Int){
         let label2 = UILabel()
         label2.text = Banners[i].Label2
         label2.numberOfLines = 1
-        label2.font = UIFont(name: "NotoSans-SemiBold", size: 20)
+        label2.font = UIFont(name: "NotoSans-Light", size: 20)
         view.addSubview(label2)
         label2.textAlignment = NSTextAlignment.left
         label2.translatesAutoresizingMaskIntoConstraints = false
@@ -110,9 +109,14 @@ func addLabel(view: UIView, i: Int){
         }
     
     @IBAction func goToCart(_ sender: Any) {
-        print("touched")
-        let dvc = UIStoryboard(name: "Cart", bundle: nil).instantiateViewController(withIdentifier: "Cart2VC")
-        self.navigationController?.pushViewController(dvc, animated: true)
+        var dvc : UIViewController?
+        if appDelegate.cart[0].isEmpty && appDelegate.cart[1].isEmpty == true {
+            dvc = UIStoryboard(name: "Cart", bundle: nil).instantiateViewController(withIdentifier: "EmptyVC")
+        }
+        else {
+            dvc = UIStoryboard(name: "Cart", bundle: nil).instantiateViewController(withIdentifier: "Cart2VC")
+        }
+        navigationController?.pushViewController(dvc!, animated: true)
     }
     @IBAction func unwindToHome(segue: UIStoryboardSegue) {
         

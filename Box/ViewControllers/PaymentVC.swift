@@ -14,13 +14,14 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet var paymentTV: UITableView!
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var cartCount = 0
-    let account = Account(email: "junsllim11@gmail.com", name: "이름", phone: 01031072646, recipient: "수령인", phoneDelivery: 01031072646, delivery1: "주소1", delivery2: "주소2", delivery3: "주소 3", deliveryMemo: "  문 앞", deliveryDate: 20)
+    let account = Account(email: "powe0112@gmail.com", name: "손수영", phone: 01065329657, recipient: "손수영", phoneDelivery: 01065329657, delivery1: "22211", delivery2: "인천광역시 미추홀구 재넘이길 147-17", delivery3: "문화네트빌 202동 403호", deliveryMemo: "  문 앞", deliveryDate: 20, token: nil)
     var productInfo = true
     var customerInfo = true
     var deliveryInfo = true
     var deliveryDateInfo = true
     var paymentInfo = true
     var totalPriceInfo = true
+    var totalPrice = 0
     let formatter = NumberFormatter()
     
     override func viewDidLoad() {
@@ -32,6 +33,15 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         formatter.numberStyle = .decimal
         setNaviBtn(color: UIColor.darkGrey)
         navigationItem.title = "주문 결제"
+        var cart = [CartItem]()
+        for i in appDelegate.cart {
+            for j in i {
+                cart.append(j)
+            }
+        }
+        for item in cart {
+            totalPrice += item.price! * item.amount!
+        }
     }
     func setNaviBtn(color: UIColor) {
         let backBTN = UIBarButtonItem(image: UIImage(named: "buttonArrow"),
@@ -82,6 +92,15 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBAction func PurchaseBtn(_ sender: Any) {
         let dvc = UIStoryboard(name: "Cart", bundle: nil).instantiateViewController(withIdentifier: "OrderResultVC") as! OrderResultVC
+        var cart = [CartItem]()
+        for i in appDelegate.cart {
+            for j in i {
+                cart.append(j)
+            }
+        }
+        dvc.TotalPrice = self.totalPrice
+        dvc.count = self.cartCount - 1
+        dvc.firstItem = cart[0].name
         self.present(dvc, animated: true)
     }
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -117,6 +136,18 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                 return cell
             }
             let cell = paymentTV.dequeueReusableCell(withIdentifier: "PaymentCartCell", for: indexPath) as! PaymentCartCell
+            for item in appDelegate.cart[1] {
+                if item.id == cart[indexPath.row-1].id
+                {
+                    let cell = paymentTV.dequeueReusableCell(withIdentifier: "PaymentCartCell2", for: indexPath) as! PaymentCartCell2
+                    let formattedPrice = formatter.string(from: NSNumber(value: cart[indexPath.row-1].price!))
+                    cell.productName.text = cart[indexPath.row-1].name
+                    cell.productPrice.text = formattedPrice
+                    cell.productImage.imageFromUrl(cart[indexPath.row-1].image)
+                    cell.productAmount.text = String(cart[indexPath.row-1].amount!) + "개"
+                    return cell
+                }
+            }
             let formattedPrice = formatter.string(from: NSNumber(value: cart[indexPath.row-1].price!))
             cell.productName.text = cart[indexPath.row-1].name
             cell.productPrice.text = formattedPrice
@@ -139,8 +170,8 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             cell.emailTF.text = account.email
             cell.ordererLabel.text = account.name
             cell.phone1TF.text = "010"
-            cell.phone2TF.text = "3107"
-            cell.phone3TF.text = "2646"
+            cell.phone2TF.text = "6532"
+            cell.phone3TF.text = "9657"
             return cell
         }
         else if indexPath.section == 2 {
@@ -154,12 +185,13 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                 return cell
             }
             let cell = paymentTV.dequeueReusableCell(withIdentifier: "PaymentRecipientCell", for: indexPath) as! PaymentRecipientCell
+            cell.recipientTF.text = "손수영"
             cell.address1TF.text = account.delivery1
             cell.address2TF.text = account.delivery2
             cell.address3TF.text = account.delivery3
             cell.phone1TF.text = "010"
-            cell.phone2TF.text = "3107"
-            cell.phone3TF.text = "2646"
+            cell.phone2TF.text = "6532"
+            cell.phone3TF.text = "9657"
             cell.deliveryMemoBtn.setTitle(account.deliveryMemo, for: .normal)
             return cell
         }
@@ -196,10 +228,6 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                 return cell
             }
             let cell = paymentTV.dequeueReusableCell(withIdentifier: "TotalPriceCell", for: indexPath) as! TotalPriceCell
-            var totalPrice = 0
-            for item in cart {
-                totalPrice += item.price! * item.amount!
-            }
             let formattedTotalPrice = formatter.string(from: NSNumber(value: totalPrice))
             cell.beforeDelivery.text = formattedTotalPrice
             cell.afterDelivery.text = formattedTotalPrice

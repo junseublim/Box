@@ -10,6 +10,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="NotoSans-Bold.ttf">
+            <string>NotoSans-Bold</string>
+        </array>
         <array key="NotoSans-Medium.ttf">
             <string>NotoSans-Medium</string>
         </array>
@@ -56,18 +59,18 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEE-PU-Ekq">
-                        <rect key="frame" x="302" y="86.5" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <rect key="frame" x="287.5" y="80" width="54" height="27.5"/>
+                        <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="20"/>
+                        <color key="textColor" red="0.12941176469999999" green="0.1450980392" blue="0.16078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H98-MJ-DKo">
-                        <rect key="frame" x="344" y="86.5" width="15" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <rect key="frame" x="341.5" y="80" width="17.5" height="27.5"/>
+                        <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="20"/>
+                        <color key="textColor" red="0.12941176469999999" green="0.1450980392" blue="0.16078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T1r-cS-TOE">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T1r-cS-TOE">
                         <rect key="frame" x="147.5" y="119.5" width="101" height="30"/>
                         <fontDescription key="fontDescription" name="NotoSans-Medium" family="Noto Sans" pointSize="13"/>
                         <state key="normal">
@@ -87,17 +90,35 @@
                             <action selector="countTouched:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="B4Y-zs-Uzn"/>
                         </connections>
                     </button>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brownishArrow" translatesAutoresizingMaskIntoConstraints="NO" id="rdn-nr-XIy">
+                        <rect key="frame" x="225" y="126.5" width="16" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="16" id="Hwp-91-KD0"/>
+                            <constraint firstAttribute="height" constant="16" id="fNv-TS-9WA"/>
+                        </constraints>
+                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brownishArrow" translatesAutoresizingMaskIntoConstraints="NO" id="pPq-h1-WD7">
+                        <rect key="frame" x="335.5" y="127" width="16" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="5to-Hu-aFN"/>
+                            <constraint firstAttribute="width" constant="16" id="i4j-Bo-29l"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="pPq-h1-WD7" firstAttribute="centerY" secondItem="R1K-Ay-dbE" secondAttribute="centerY" id="B5D-Sl-LYG"/>
                     <constraint firstItem="96j-WF-zgE" firstAttribute="leading" secondItem="Ea5-Ce-2uH" secondAttribute="trailing" constant="19" id="HEQ-vj-Dl3"/>
+                    <constraint firstItem="rdn-nr-XIy" firstAttribute="leading" secondItem="T1r-cS-TOE" secondAttribute="trailing" constant="-23.5" id="HPG-QW-vgU"/>
                     <constraint firstItem="R1K-Ay-dbE" firstAttribute="height" secondItem="T1r-cS-TOE" secondAttribute="height" id="ICf-8O-JZQ"/>
                     <constraint firstItem="DaT-LY-Uz2" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="80:169" id="Jao-DX-840"/>
+                    <constraint firstItem="rdn-nr-XIy" firstAttribute="centerY" secondItem="T1r-cS-TOE" secondAttribute="centerY" id="NzK-Wh-UKr"/>
                     <constraint firstItem="oEE-PU-Ekq" firstAttribute="centerY" secondItem="H98-MJ-DKo" secondAttribute="centerY" id="Qcl-EL-KUd"/>
                     <constraint firstItem="H98-MJ-DKo" firstAttribute="leading" secondItem="oEE-PU-Ekq" secondAttribute="trailing" id="XfL-0P-nMu"/>
                     <constraint firstItem="R1K-Ay-dbE" firstAttribute="leading" secondItem="T1r-cS-TOE" secondAttribute="trailing" constant="9" id="Yko-Cm-Rjn"/>
                     <constraint firstItem="R1K-Ay-dbE" firstAttribute="width" secondItem="T1r-cS-TOE" secondAttribute="width" id="Ysy-od-OdU"/>
                     <constraint firstItem="Ea5-Ce-2uH" firstAttribute="centerY" secondItem="YvU-kt-Ehl" secondAttribute="centerY" id="ad1-Xm-054"/>
                     <constraint firstItem="Ea5-Ce-2uH" firstAttribute="leading" secondItem="YvU-kt-Ehl" secondAttribute="trailing" constant="7" id="d4d-jm-HYJ"/>
+                    <constraint firstItem="pPq-h1-WD7" firstAttribute="leading" secondItem="R1K-Ay-dbE" secondAttribute="trailing" constant="-23.5" id="ipX-Kq-ntZ"/>
                     <constraint firstItem="DaT-LY-Uz2" firstAttribute="top" secondItem="Ea5-Ce-2uH" secondAttribute="bottom" constant="18" id="yLw-PS-6Uq"/>
                     <constraint firstItem="T1r-cS-TOE" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="101:169" id="z9l-3I-uWb"/>
                 </constraints>
@@ -129,6 +150,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="brownishArrow" width="16" height="16"/>
         <image name="icnClose" width="12" height="12"/>
         <image name="waterSample" width="80" height="80"/>
     </resources>

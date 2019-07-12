@@ -51,17 +51,21 @@ UICollectionViewDelegateFlowLayout
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = packageDetailCV.dequeueReusableCell(withReuseIdentifier: "PackageItemInsideCell", for: indexPath) as! PackageItemInsideCell
         cell.packageItemName.text = imageList![indexPath.row].name
-        cell.packageItemPrice.text = String(imageList![indexPath.row].price!)
-        cell.packageItemImage.imageFromUrl(imageList![indexPath.row].main_img)
-        return cell
         
+        cell.packageItemImage.imageFromUrl(imageList![indexPath.row].main_img)
+        
+        
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        let formattedFinalPrice = formatter.string(from: NSNumber(value: imageList![indexPath.row].price!))
+        cell.packageItemPrice.text = formattedFinalPrice
+        return cell
         
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
             let width: CGFloat = (self.frame.width) / 2
             //  let numOfRows = packageitems.count / 2
-            let heightratio = 239 / (375 / 2) * ((self.frame.width) / 2)
-            let height = CGFloat(245)
+            let height = CGFloat(238)
             return CGSize(width: width, height: height)
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

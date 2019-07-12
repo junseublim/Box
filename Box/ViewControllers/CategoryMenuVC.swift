@@ -33,10 +33,26 @@ class CategoryMenuVC: UIViewController, UICollectionViewDelegate, UICollectionVi
         periodicBtn.setTitleColor(UIColor.pumpkinOrange, for: .normal)
         packageBtn.setTitleColor(UIColor.darkGrey, for: .normal)
         setItemList()
+        let swipeLeftGesture = UISwipeGestureRecognizer(target: self, action: #selector(self.handleLeftSwipe(_:)))
+        swipeLeftGesture.direction = .left
+        let swipeRightGesture = UISwipeGestureRecognizer(target: self, action: #selector(self.handleRightSwipe(_:)))
+        swipeRightGesture.direction = .right
+        categoryCollection.addGestureRecognizer(swipeLeftGesture)
+        categoryCollection.addGestureRecognizer(swipeRightGesture)
+    }
+    @objc func handleLeftSwipe(_ sender: UITapGestureRecognizer? = nil) {
+        if buttonselection == 0 {
+            self.packageTouched(nil)
+        }
+    }
+    @objc func handleRightSwipe(_ sender: UITapGestureRecognizer? = nil) {
+        if buttonselection == 1 {
+             self.periodicTouched(nil)
+        }
     }
 
     
-    @IBAction func packageTouched(_ sender: Any) {
+    @IBAction func packageTouched(_ sender: AnyObject?) {
         packageView.backgroundColor = UIColor.pumpkinOrange
         periodicView.backgroundColor = UIColor.lightBlueGrey
 packageBtn.setTitleColor(UIColor.pumpkinOrange, for: .normal)
@@ -44,7 +60,7 @@ packageBtn.setTitleColor(UIColor.pumpkinOrange, for: .normal)
         buttonselection = 1
         categoryCollection.reloadData()
     }
-    @IBAction func periodicTouched(_ sender: Any) {
+    @IBAction func periodicTouched(_ sender: AnyObject?) {
         periodicView.backgroundColor = UIColor.pumpkinOrange
         packageView.backgroundColor = UIColor.lightBlueGrey
         packageBtn.setTitleColor(UIColor.darkGrey, for: .normal)

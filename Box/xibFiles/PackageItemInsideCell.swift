@@ -17,7 +17,7 @@ class PackageItemInsideCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        backgroungView.setBorder(borderColor: UIColor.lightBlueGrey, borderWidth:0.5)
+        backgroungView.setBorder(borderColor: UIColor.lightBlueGrey, borderWidth: 1)
     }
 
 }

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Kingfisher
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().isTranslucent = true
         cart.append(periodicalCart)
         cart.append(packageCart)
-        token = "1"
+        token = ""
         return true
     }
     

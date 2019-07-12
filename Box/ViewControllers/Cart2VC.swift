@@ -8,8 +8,9 @@
 
 import UIKit
 
-class Cart2VC: UIViewController, UITableViewDelegate, UITableViewDataSource, CartPeriodicalCellDelegate {
-   
+class Cart2VC: UIViewController, UITableViewDelegate, UITableViewDataSource, CartPeriodicalCellDelegate, CartPackageCellDelegate {
+
+    
     typealias Cart_RegularRecord = (String,Int, Int)
     typealias Cart_PackageRecord = (String,Int)
     @IBOutlet var countPicker: UIPickerView!
@@ -124,6 +125,8 @@ class Cart2VC: UIViewController, UITableViewDelegate, UITableViewDataSource, Car
     func registerTVC() {
         let nibName = UINib(nibName: "CartPeriodicalCell", bundle: nil)
         CartTV.register(nibName, forCellReuseIdentifier: "CartPeriodicalCell")
+        let nibName1 = UINib(nibName: "CartPackageCell", bundle: nil)
+        CartTV.register(nibName1, forCellReuseIdentifier: "CartPackageCell")
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -163,7 +166,7 @@ class Cart2VC: UIViewController, UITableViewDelegate, UITableViewDataSource, Car
             cell.nameLabel.text = cart1[indexPath.row].name
             cell.priceLabel.text = formattedFinalPrice
             cell.durationBtn.isHidden = false
-            cell.durationBtn.setTitle("\(cart1[indexPath.row].duration! + 1)달에 한 번", for: .normal)
+            cell.durationBtn.setTitle("  \(cart1[indexPath.row].duration! + 1)달에 한 번", for: .normal)
             
             cell.productImg.imageFromUrl(cart1[indexPath.row].image!)
             cell.countBtn.setTitle("\(cart1[indexPath.row].amount!)개", for: .normal)
@@ -180,7 +183,7 @@ class Cart2VC: UIViewController, UITableViewDelegate, UITableViewDataSource, Car
             cell.delegate = self
         return cell
         }
-        let cell = CartTV.dequeueReusableCell(withIdentifier: "CartPeriodicalCell", for: indexPath) as! CartPeriodicalCell
+        let cell = CartTV.dequeueReusableCell(withIdentifier: "CartPackageCell", for: indexPath) as! CartPackageCell
         let cart2 = appDelegate.cart[1]
         let formattedFinalPrice = formatter.string(from: NSNumber(value:cart2[indexPath.row].price!))
         cell.nameLabel.text = cart2[indexPath.row].name
@@ -214,36 +217,63 @@ class Cart2VC: UIViewController, UITableViewDelegate, UITableViewDataSource, Car
         return height
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = CartTV.cellForRow(at: indexPath) as! CartPeriodicalCell
-        if appDelegate.cart[indexPath.section][indexPath.row].selected == true {
-            appDelegate.cart[indexPath.section][indexPath.row].selected = false
-            cell.selectBtn.setImage(UIImage(named: ""), for: .normal)
+        
+        switch indexPath.section {
+        case 0:
+            let cell = CartTV.cellForRow(at: indexPath) as! CartPeriodicalCell
+            if appDelegate.cart[indexPath.section][indexPath.row].selected == true {
+                appDelegate.cart[indexPath.section][indexPath.row].selected = false
+                cell.selectBtn.setImage(UIImage(named: ""), for: .normal)
+            }
+            else {
+                appDelegate.cart[indexPath.section][indexPath.row].selected = true
+                cell.selectBtn.setImage(UIImage(named: "checkIcon"), for: .normal)
+            }
+        case 1:
+             let cell = CartTV.cellForRow(at: indexPath) as! CartPackageCell
+             if appDelegate.cart[indexPath.section][indexPath.row].selected == true {
+                appDelegate.cart[indexPath.section][indexPath.row].selected = false
+                cell.selectBtn.setImage(UIImage(named: ""), for: .normal)
+             }
+             else {
+                appDelegate.cart[indexPath.section][indexPath.row].selected = true
+                cell.selectBtn.setImage(UIImage(named: "checkIcon"), for: .normal)
+            }
+        default:
+            break
         }
-        else {
-            appDelegate.cart[indexPath.section][indexPath.row].selected = true
-            cell.selectBtn.setImage(UIImage(named: "checkIcon"), for: .normal)
-        }
+        
         checkAllSelected()
+        addAllprices()
+        
+        }
+    
+    func CartPackageCell(_ CartPackageCell: CartPackageCell, countTouchedFor1 section: Int, countTouchedFor2 row: Int) {
+        countPicker.isHidden = false
+        pickerTool.isHidden = false
+        tempRow = row
+        tempSection = section
+    }
+    
+    func CartPackageCell(_ CartPackageCell: CartPackageCell, cancelTouchedFor1 section: Int, cancelTouchedFor2 row: Int) {
+        let rs = cart_PackageDAO.remove(package_id:  appDelegate.cart[section][row].id!)
+        if rs == false {
+            print("삭제 실패!")
+            return
+        }
+        appDelegate.cart[1].remove(at: row)
+        CartTV.reloadData()
         addAllprices()
     }
     
     func CartPeriodicalCell(_ CartPeriodicalCell: CartPeriodicalCell, cancelTouchedFor1 section: Int, cancelTouchedFor2 row: Int){
-        
-        if section == 0 {
+ 
             let rs = cart_RegularDAO.remove(product_id: appDelegate.cart[section][row].id!)
             if rs == false {
                 print("삭제 실패!")
                 return
             }
-        }
-        else {
-            let rs = cart_PackageDAO.remove(package_id:  appDelegate.cart[section][row].id!)
-            if rs == false {
-                print("삭제 실패!")
-                return
-            }
-        }
-        appDelegate.cart[section].remove(at: row)
+        appDelegate.cart[0].remove(at: row)
         CartTV.reloadData()
         addAllprices()
     }
@@ -298,6 +328,7 @@ class Cart2VC: UIViewController, UITableViewDelegate, UITableViewDataSource, Car
     }
     
 }
+    
 extension Cart2VC: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1

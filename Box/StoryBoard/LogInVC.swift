@@ -10,7 +10,6 @@ import UIKit
 class LogInVC: UIViewController, UITextFieldDelegate {
 
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    
     @IBOutlet var emailTF: UITextField!
     @IBOutlet var pwTF: UITextField!
     
@@ -76,8 +75,8 @@ else {
             guard let `self` = self else { return }
             switch data {
             case .success(let res):
-                print("로그인 성공")
                 let _res: Token = res as! Token
+                print("로그인 성공")
                 self.appDelegate.token = _res.token
                 print(self.appDelegate.token!)
                 self.performSegue(withIdentifier: "unwindToHome", sender: self)

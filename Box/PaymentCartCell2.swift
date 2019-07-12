@@ -1,20 +1,19 @@
 //
-//  PaymentCartCell.swift
-//  Box
+//  PaymentCartCell2.swift
+//  
 //
-//  Created by Jun Seub Lim on 11/07/2019.
-//  Copyright © 2019 Jun Seub Lim. All rights reserved.
+//  Created by Jun Seub Lim on 12/07/2019.
 //
 
 import UIKit
 
-class PaymentCartCell: UITableViewCell {
-
-    @IBOutlet var ratioConstraint: NSLayoutConstraint!
+class PaymentCartCell2: UITableViewCell {
+    
     @IBOutlet var productImage: UIImageView!
     @IBOutlet var productName: UILabel!
-    @IBOutlet var productAmount: UILabel!
+    
     @IBOutlet var productPrice: UILabel!
+    @IBOutlet var productAmount: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -22,14 +21,8 @@ class PaymentCartCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
+
         // Configure the view for the selected state
-    }
-    func package() {
-        DispatchQueue.main.async {
-            self.ratioConstraint.constant = 0.5
-            self.layoutIfNeeded()
-        }
     }
 
 }

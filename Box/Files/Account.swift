@@ -9,15 +9,16 @@
 import Foundation
 
 struct Account {
-    var email: String
-    var name: String
-    var phone: Int
-    var recipient: String
-    var phoneDelivery: Int
-    var delivery1: String
-    var delivery2: String
-    var delivery3: String
-    var deliveryMemo: String
-    var deliveryDate: Int
+    var email: String?
+    var name: String?
+    var phone: Int?
+    var recipient: String?
+    var phoneDelivery: Int?
+    var delivery1: String?
+    var delivery2: String?
+    var delivery3: String?
+    var deliveryMemo: String?
+    var deliveryDate: Int?
+    var token: String?
     
 }

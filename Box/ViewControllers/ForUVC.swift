@@ -44,7 +44,7 @@ class ForUVC: UIViewController  {
         selected(button: durationTwo, selected: false)
         
     }
-   
+
     func settingBorders() {
        rankTV.setBorder(borderColor: UIColor.lightBlueGreyTwo, borderWidth: 0.5)
         durationPrepare.setBorder(borderColor: UIColor.lightBlueGreyTwo, borderWidth: 1)

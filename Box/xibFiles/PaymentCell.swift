@@ -13,7 +13,7 @@ class PaymentCell: UITableViewCell {
     @IBOutlet var registerCardBtn: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
-        registerCardBtn.setBorder(borderColor: UIColor.pumpkinOrange, borderWidth: 1)
+        registerCardBtn.setBorder(borderColor: UIColor.blueGrey, borderWidth: 1)
         registerCardBtn.makeRounded(cornerRadius: 3)
     }
 

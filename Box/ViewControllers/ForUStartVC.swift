@@ -18,7 +18,10 @@ class ForUStartVC: UIViewController {
         startBtn.backgroundColor = UIColor.pumpkinOrange
     }
     
-
+    @IBAction func push(_ sender: Any) {
+        let dvc = self.storyboard?.instantiateViewController(withIdentifier: "ForUVC") as! ForUVC
+        self.navigationController?.pushViewController(dvc, animated: true)
+    }
     /*
     // MARK: - Navigation
 

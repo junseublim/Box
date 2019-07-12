@@ -362,6 +362,9 @@
                                         <state key="normal" title="홈 화면 가기">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="O3U-8D-8ko" kind="unwind" unwindAction="unwindToHomeWithSegue:" id="czG-E5-DMi"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -423,6 +426,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z4b-p9-Z7p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="O3U-8D-8ko" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2423" y="-267"/>
         </scene>

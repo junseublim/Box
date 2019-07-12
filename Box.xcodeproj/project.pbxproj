@@ -27,6 +27,10 @@
 		D60A8FCD22C91E1A00086350 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D60A8FCC22C91E1A00086350 /* TabBar.storyboard */; };
 		D60A8FCF22C91F5800086350 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60A8FCE22C91F5800086350 /* HomeVC.swift */; };
 		D60C92A122D78FEA005D5AFA /* ForUList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60C92A022D78FEA005D5AFA /* ForUList.swift */; };
+		D60C92A622D7B4F7005D5AFA /* CartPackageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60C92A422D7B4F7005D5AFA /* CartPackageCell.swift */; };
+		D60C92A722D7B4F7005D5AFA /* CartPackageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D60C92A522D7B4F7005D5AFA /* CartPackageCell.xib */; };
+		D60C92A922D7C7F6005D5AFA /* SearchResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60C92A822D7C7F6005D5AFA /* SearchResultVC.swift */; };
+		D60C92AB22D7C984005D5AFA /* GetSearchList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60C92AA22D7C984005D5AFA /* GetSearchList.swift */; };
 		D60E593A22D3900E00ED2A68 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60E593922D3900E00ED2A68 /* APIConstants.swift */; };
 		D60E595822D4768600ED2A68 /* Regular.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60E595322D4768600ED2A68 /* Regular.swift */; };
 		D60E595922D4768600ED2A68 /* ResponseString.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60E595422D4768600ED2A68 /* ResponseString.swift */; };
@@ -62,7 +66,6 @@
 		D64715F622D7396B00146A3D /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64715F522D7396B00146A3D /* Account.swift */; };
 		D64EF5E122D07C4000784A82 /* LogIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D64EF5E022D07C4000784A82 /* LogIn.storyboard */; };
 		D64EF5E322D096D100784A82 /* SignUp1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64EF5E222D096D100784A82 /* SignUp1VC.swift */; };
-		D64EF5E522D0A0B000784A82 /* LTHRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64EF5E422D0A0B000784A82 /* LTHRadioButton.swift */; };
 		D64EF5E622D0B8E500784A82 /* NotoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D6FDA85F22CE2C4A00866209 /* NotoSans-Bold.ttf */; };
 		D651618D22CC6D49002AE0DC /* productCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D651618C22CC6D49002AE0DC /* productCell.swift */; };
 		D651618F22CC75EF002AE0DC /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = D651618E22CC75EF002AE0DC /* Product.swift */; };
@@ -85,6 +88,10 @@
 		D682448122D5B83000E334CF /* ForURegularCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D682448022D5B83000E334CF /* ForURegularCell.swift */; };
 		D682448322D5B84400E334CF /* ForURecommendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D682448222D5B84400E334CF /* ForURecommendCell.swift */; };
 		D682448522D5B90B00E334CF /* ForUResultPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D682448422D5B90B00E334CF /* ForUResultPageVC.swift */; };
+		D694BA8A22D87B6E00A5638F /* MyBoxVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D694BA8922D87B6E00A5638F /* MyBoxVC.swift */; };
+		D694BA8E22D8A81E00A5638F /* AccountDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D694BA8D22D8A81E00A5638F /* AccountDAO.swift */; };
+		D694BA9222D8AC5B00A5638F /* Account.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = D694BA9122D8AC5A00A5638F /* Account.sqlite */; };
+		D694BA9622D8C9A100A5638F /* PaymentCartCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D694BA9522D8C9A100A5638F /* PaymentCartCell2.swift */; };
 		D6AFB2AB22C8A668007F6A3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AFB2AA22C8A668007F6A3D /* AppDelegate.swift */; };
 		D6AFB2B022C8A668007F6A3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6AFB2AE22C8A668007F6A3D /* Main.storyboard */; };
 		D6AFB2B222C8A669007F6A3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6AFB2B122C8A669007F6A3D /* Assets.xcassets */; };
@@ -137,6 +144,10 @@
 		D60A8FCC22C91E1A00086350 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		D60A8FCE22C91F5800086350 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		D60C92A022D78FEA005D5AFA /* ForUList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForUList.swift; sourceTree = "<group>"; };
+		D60C92A422D7B4F7005D5AFA /* CartPackageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartPackageCell.swift; sourceTree = "<group>"; };
+		D60C92A522D7B4F7005D5AFA /* CartPackageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartPackageCell.xib; sourceTree = "<group>"; };
+		D60C92A822D7C7F6005D5AFA /* SearchResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchResultVC.swift; path = ../StoryBoard/SearchResultVC.swift; sourceTree = "<group>"; };
+		D60C92AA22D7C984005D5AFA /* GetSearchList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSearchList.swift; sourceTree = "<group>"; };
 		D60E593922D3900E00ED2A68 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		D60E595322D4768600ED2A68 /* Regular.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regular.swift; sourceTree = "<group>"; };
 		D60E595422D4768600ED2A68 /* ResponseString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseString.swift; sourceTree = "<group>"; };
@@ -172,7 +183,6 @@
 		D64715F522D7396B00146A3D /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		D64EF5E022D07C4000784A82 /* LogIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogIn.storyboard; sourceTree = "<group>"; };
 		D64EF5E222D096D100784A82 /* SignUp1VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp1VC.swift; sourceTree = "<group>"; };
-		D64EF5E422D0A0B000784A82 /* LTHRadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LTHRadioButton.swift; sourceTree = "<group>"; };
 		D651618822CC6711002AE0DC /* NotoSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Light.ttf"; sourceTree = "<group>"; };
 		D651618C22CC6D49002AE0DC /* productCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = productCell.swift; sourceTree = "<group>"; };
 		D651618E22CC75EF002AE0DC /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
@@ -203,6 +213,10 @@
 		D682448022D5B83000E334CF /* ForURegularCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForURegularCell.swift; sourceTree = "<group>"; };
 		D682448222D5B84400E334CF /* ForURecommendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForURecommendCell.swift; sourceTree = "<group>"; };
 		D682448422D5B90B00E334CF /* ForUResultPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForUResultPageVC.swift; sourceTree = "<group>"; };
+		D694BA8922D87B6E00A5638F /* MyBoxVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyBoxVC.swift; path = ../StoryBoard/MyBoxVC.swift; sourceTree = "<group>"; };
+		D694BA8D22D8A81E00A5638F /* AccountDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDAO.swift; sourceTree = "<group>"; };
+		D694BA9122D8AC5A00A5638F /* Account.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = Account.sqlite; sourceTree = "<group>"; };
+		D694BA9522D8C9A100A5638F /* PaymentCartCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PaymentCartCell2.swift; path = /Users/junslim11/Desktop/Box/Box/PaymentCartCell2.swift; sourceTree = "<absolute>"; };
 		D6AFB2A722C8A668007F6A3D /* Box.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Box.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6AFB2AA22C8A668007F6A3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D6AFB2AF22C8A668007F6A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -314,6 +328,7 @@
 				D6067CBE22D4E3D300BD15A5 /* PackageDetail.swift */,
 				D60E599422D4CBC200ED2A68 /* RegularDetail.swift */,
 				D60E595D22D476B400ED2A68 /* GetRegularList.swift */,
+				D60C92AA22D7C984005D5AFA /* GetSearchList.swift */,
 				D60E598122D4A36700ED2A68 /* GetPackageList.swift */,
 				D60E599222D4CA1D00ED2A68 /* GetRegularDetail.swift */,
 				D6067CBC22D4E34200BD15A5 /* GetPackageDetail.swift */,
@@ -334,8 +349,10 @@
 				D6FDA83322CCAE0100866209 /* PeriodicalCell.xib */,
 				D6FDA85522CCE04200866209 /* PackageCell.swift */,
 				D6FDA85622CCE04200866209 /* PackageCell.xib */,
-				D61F15B222CE5BB20063C172 /* CartPeriodicalCell.swift */,
 				D61F15B322CE5BB20063C172 /* CartPeriodicalCell.xib */,
+				D61F15B222CE5BB20063C172 /* CartPeriodicalCell.swift */,
+				D60C92A422D7B4F7005D5AFA /* CartPackageCell.swift */,
+				D60C92A522D7B4F7005D5AFA /* CartPackageCell.xib */,
 				D6CFB33322CFDE0800CF823E /* PackageItemCell.swift */,
 				D60E598E22D4C4D300ED2A68 /* PackageItemInsideCell.swift */,
 				D60E598F22D4C4D300ED2A68 /* PackageItemInsideCell.xib */,
@@ -355,6 +372,7 @@
 				D64715EF22D7271300146A3D /* PaymentCartCell.swift */,
 				D64715F122D7272900146A3D /* PaymentOrdererCell.swift */,
 				D64715F322D7273500146A3D /* PaymentRecipientCell.swift */,
+				D694BA9522D8C9A100A5638F /* PaymentCartCell2.swift */,
 			);
 			path = xibFiles;
 			sourceTree = "<group>";
@@ -373,14 +391,15 @@
 				D6CFB32F22CFD44200CF823E /* PackageDetailVC.swift */,
 				D60E599822D4CF1200ED2A68 /* PackageDetailViewController.swift */,
 				D61F15BF22CE77520063C172 /* Cart2VC.swift */,
-				D64EF5E422D0A0B000784A82 /* LTHRadioButton.swift */,
-				D6CFB32D22CFD35D00CF823E /* OrderResultVC.swift */,
 				D60585C222D20577009DAE1A /* EmptyCartVC.swift */,
 				D60585C022D0D1C4009DAE1A /* SignUp2VC.swift */,
 				D64EF5E222D096D100784A82 /* SignUp1VC.swift */,
 				D6C4619422D26C9E001012FD /* LogInVC.swift */,
 				D60585C822D2271A009DAE1A /* PaymentVC.swift */,
+				D6CFB32D22CFD35D00CF823E /* OrderResultVC.swift */,
 				D682448422D5B90B00E334CF /* ForUResultPageVC.swift */,
+				D60C92A822D7C7F6005D5AFA /* SearchResultVC.swift */,
+				D694BA8922D87B6E00A5638F /* MyBoxVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -440,6 +459,8 @@
 				D67F1EE122D67066007446D0 /* Cart.sqlite */,
 				D67F1EE922D69B88007446D0 /* Recent.sqlite */,
 				D67F1EE322D670B4007446D0 /* Cart_RegularDAO.swift */,
+				D694BA9122D8AC5A00A5638F /* Account.sqlite */,
+				D694BA8D22D8A81E00A5638F /* AccountDAO.swift */,
 				D67F1EE522D672AE007446D0 /* Cart_PackageDAO.swift */,
 				D67F1EE722D69705007446D0 /* RecentSearchedDAO.swift */,
 				D6AFB2AA22C8A668007F6A3D /* AppDelegate.swift */,
@@ -528,6 +549,7 @@
 			files = (
 				D67F1EE222D67066007446D0 /* Cart.sqlite in Resources */,
 				D6CFDADD22D5DA3000E58D0D /* PackageDetail2Cell.xib in Resources */,
+				D60C92A722D7B4F7005D5AFA /* CartPackageCell.xib in Resources */,
 				D64715E422D722E500146A3D /* RegularDateCell.xib in Resources */,
 				D64EF5E622D0B8E500784A82 /* NotoSans-Bold.ttf in Resources */,
 				D60E599122D4C4D300ED2A68 /* PackageItemInsideCell.xib in Resources */,
@@ -537,6 +559,7 @@
 				D675423922C9DE4C00A319D4 /* CategoryCVC.xib in Resources */,
 				D60A8FCD22C91E1A00086350 /* TabBar.storyboard in Resources */,
 				D64EF5E122D07C4000784A82 /* LogIn.storyboard in Resources */,
+				D694BA9222D8AC5B00A5638F /* Account.sqlite in Resources */,
 				D6C6010422CBA110001ED3C8 /* NotoSans-Medium.ttf in Resources */,
 				D6CFDAE022D6041B00E58D0D /* Payment.storyboard in Resources */,
 				D61F15AC22CE462E0063C172 /* Cart.storyboard in Resources */,
@@ -640,6 +663,7 @@
 				D60585C322D20577009DAE1A /* EmptyCartVC.swift in Sources */,
 				D64715F622D7396B00146A3D /* Account.swift in Sources */,
 				D6AFB2BD22C8AE3B007F6A3D /* ViewController.swift in Sources */,
+				D694BA8E22D8A81E00A5638F /* AccountDAO.swift in Sources */,
 				D60A8FCF22C91F5800086350 /* HomeVC.swift in Sources */,
 				D675423B22CA700100A319D4 /* CategoryItem.swift in Sources */,
 				D6067CC522D514CB00BD15A5 /* SignUp.swift in Sources */,
@@ -647,11 +671,11 @@
 				D60E595822D4768600ED2A68 /* Regular.swift in Sources */,
 				D6FDA85C22CDE0C300866209 /* CSStepper.swift in Sources */,
 				D67F1EE422D670B4007446D0 /* Cart_RegularDAO.swift in Sources */,
+				D60C92A922D7C7F6005D5AFA /* SearchResultVC.swift in Sources */,
 				D6C4619522D26C9E001012FD /* LogInVC.swift in Sources */,
 				D67F1EDD22D66EDD007446D0 /* FMDatabaseAdditions.m in Sources */,
 				D6067CBD22D4E34200BD15A5 /* GetPackageDetail.swift in Sources */,
 				D60E598622D4A81900ED2A68 /* ResponsePackage.swift in Sources */,
-				D64EF5E522D0A0B000784A82 /* LTHRadioButton.swift in Sources */,
 				D675423D22CAF88200A319D4 /* SearchVC.swift in Sources */,
 				D64715E722D722F600146A3D /* PaymentCell.swift in Sources */,
 				D60E598222D4A36700ED2A68 /* GetPackageList.swift in Sources */,
@@ -664,6 +688,7 @@
 				D64715EE22D726FC00146A3D /* PaymentHeaderCell.swift in Sources */,
 				D6067CBF22D4E3D300BD15A5 /* PackageDetail.swift in Sources */,
 				D60600E922CB30F90037C57A /* ForUStartVC.swift in Sources */,
+				D60C92AB22D7C984005D5AFA /* GetSearchList.swift in Sources */,
 				D6CFB33422CFDE0800CF823E /* PackageItemCell.swift in Sources */,
 				D6CFB33222CFDBA500CF823E /* ItemInsidePackage.swift in Sources */,
 				D60E599322D4CA1D00ED2A68 /* GetRegularDetail.swift in Sources */,
@@ -674,13 +699,16 @@
 				D67F1EDB22D66EDD007446D0 /* FMDatabase.m in Sources */,
 				D651618D22CC6D49002AE0DC /* productCell.swift in Sources */,
 				D67F1EDC22D66EDD007446D0 /* FMResultSet.m in Sources */,
+				D694BA9622D8C9A100A5638F /* PaymentCartCell2.swift in Sources */,
 				D682448522D5B90B00E334CF /* ForUResultPageVC.swift in Sources */,
 				D67F1EDE22D66EDD007446D0 /* FMDatabasePool.m in Sources */,
 				D6C6010622CBC916001ED3C8 /* PeriodicalProductVC.swift in Sources */,
 				D67F1EDF22D66EDD007446D0 /* FMDatabaseQueue.m in Sources */,
 				D64715E322D722E500146A3D /* RegularDateCell.swift in Sources */,
 				D6FDA85A22CDBFE900866209 /* ProductDetailVC.swift in Sources */,
+				D694BA8A22D87B6E00A5638F /* MyBoxVC.swift in Sources */,
 				D60E595E22D476B400ED2A68 /* GetRegularList.swift in Sources */,
+				D60C92A622D7B4F7005D5AFA /* CartPackageCell.swift in Sources */,
 				D61F15C022CE77520063C172 /* Cart2VC.swift in Sources */,
 				D60585C922D2271A009DAE1A /* PaymentVC.swift in Sources */,
 				D6FDA85722CCE04200866209 /* PackageCell.swift in Sources */,

@@ -14,6 +14,7 @@ class SearchVC: UIViewController {
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var SearchTV: UITableView!
  
+    @IBOutlet var EmptyView: UIView!
     @IBOutlet var recentView: UIView!
     @IBOutlet var recommendBtn: UIButton!
     @IBOutlet var recommendView: UIView!
@@ -22,6 +23,7 @@ class SearchVC: UIViewController {
     var btnSelected = 0
     override func viewDidLoad() {
         super.viewDidLoad()
+        checkIsEmpty()
         self.SearchTV.separatorStyle = .none
         self.SearchTV.delegate = self
         self.SearchTV.dataSource = self
@@ -31,6 +33,19 @@ class SearchVC: UIViewController {
 recentBtn.setTitleColor(UIColor.pumpkinOrange, for: .normal)
 recommendBtn.setTitleColor(UIColor.darkGrey, for: .normal)
         UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.darkGrey], for: .normal)
+    }
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        SearchTV.reloadData()
+        self.view.endEditing(true)
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     @IBAction func deleteCell(_ sender: Any) {
         guard let cell = (sender as AnyObject).superview?.superview as? UITableViewCell else {
@@ -43,11 +58,21 @@ recommendBtn.setTitleColor(UIColor.darkGrey, for: .normal)
         
         appDelegate.recentSearched.remove(at: (indexPath! as NSIndexPath).row)
         SearchTV.deleteRows(at: [indexPath!], with: .fade)
+        checkIsEmpty()
         return
         }
-        
     }
+    func checkIsEmpty(){
+        if appDelegate.recentSearched.isEmpty {
+            EmptyView.isHidden = false
+        }
+        else {
+            EmptyView.isHidden = true
+        }
+    }
+    
     @IBAction func recentTouched(_ sender: Any) {
+        checkIsEmpty()
         recentView.backgroundColor = UIColor.pumpkinOrange
         recommendView.backgroundColor = UIColor.lightBlueGrey
         recentBtn.setTitleColor(UIColor.pumpkinOrange, for: .normal)
@@ -57,6 +82,7 @@ recommendBtn.setTitleColor(UIColor.darkGrey, for: .normal)
         
     }
     @IBAction func recommendTouched(_ sender: Any) {
+        EmptyView.isHidden = true
         recentView.backgroundColor = UIColor.lightBlueGrey
         recommendView.backgroundColor = UIColor.pumpkinOrange
         recentBtn.setTitleColor(UIColor.darkGrey, for: .normal)
@@ -65,9 +91,11 @@ recommendBtn.setTitleColor(UIColor.darkGrey, for: .normal)
         SearchTV.reloadData()
        
     }
-    
+    @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
+        self.view.endEditing(true)
+    }
 }
-    extension SearchVC: UITableViewDelegate {
+extension SearchVC: UITableViewDelegate {
         
     }
 extension SearchVC: UITableViewDataSource {
@@ -104,9 +132,29 @@ func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> 
 
     return cell
 }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let searched = appDelegate.recentSearched[indexPath.row]
+        let dvc = self.storyboard?.instantiateViewController(withIdentifier: "SearchResultVC") as! SearchResultVC
+        dvc.Searched = searched
+        self.navigationController?.pushViewController(dvc, animated: true)
+    }
 
 }
 extension SearchVC: UISearchBarDelegate {
+    
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+        if appDelegate.recentSearched.isEmpty {
+            self.EmptyView.addGestureRecognizer(tapGesture)
+         }
+        else {
+        self.SearchTV.addGestureRecognizer(tapGesture)
+        }
+    }
+
+
+    
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         self.view.endEditing(true)
     }
@@ -118,7 +166,11 @@ extension SearchVC: UISearchBarDelegate {
         let rs = recentSearchDAO.create(searched: searched!)
         if rs == true {
         appDelegate.recentSearched.insert(searched!, at: 0)
+        checkIsEmpty()
         SearchTV.reloadData()
+        let dvc = self.storyboard?.instantiateViewController(withIdentifier: "SearchResultVC") as! SearchResultVC
+        dvc.Searched = searched
+        self.navigationController?.pushViewController(dvc, animated: true)
         }
     }
     
