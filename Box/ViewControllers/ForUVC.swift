@@ -108,7 +108,7 @@ class ForUVC: UIViewController  {
         
     }
     @IBAction func goBack(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     @IBAction func selectType(_ sender: UIButton) {
         switch sender.currentTitle {
@@ -140,7 +140,7 @@ class ForUVC: UIViewController  {
     @IBAction func selectDuration(_ sender: UIButton) {
         
         switch sender.currentTitle {
-        case "준비 중이야":
+        case "준비 단계":
             selected(button: durationPrepare, selected: true)
             selected(button: durationOne, selected: false)
             selected(button: durationOneToTwo, selected: false)

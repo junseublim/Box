@@ -10,7 +10,7 @@ import UIKit
 
 class SearchVC: UIViewController {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    let recommendList = ["물티슈", "가그린", "화장실 슬리퍼", "음식물 쓰레기통", "규조토 발 매트"]
+    let recommendList = ["물티슈", "삼다수", "고양이", "디퓨저", "세제"]
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var SearchTV: UITableView!
  
@@ -92,6 +92,7 @@ recommendBtn.setTitleColor(UIColor.darkGrey, for: .normal)
        
     }
     @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
+        self.SearchTV.removeGestureRecognizer(sender!)
         self.view.endEditing(true)
     }
 }
@@ -133,7 +134,14 @@ func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> 
     return cell
 }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let searched = appDelegate.recentSearched[indexPath.row]
+        var searched = ""
+        if btnSelected == 0{
+        searched = appDelegate.recentSearched[indexPath.row]
+        }
+        else {
+            searched = (tableView.cellForRow(at: indexPath)?.textLabel!.text)!
+            
+        }
         let dvc = self.storyboard?.instantiateViewController(withIdentifier: "SearchResultVC") as! SearchResultVC
         dvc.Searched = searched
         self.navigationController?.pushViewController(dvc, animated: true)

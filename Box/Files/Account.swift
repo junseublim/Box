@@ -11,9 +11,11 @@ import Foundation
 struct Account {
     var email: String?
     var name: String?
-    var phone: Int?
+    var birth: String?
+    var phone: String?
+    var gender: Int?
     var recipient: String?
-    var phoneDelivery: Int?
+    var phoneDelivery: String?
     var delivery1: String?
     var delivery2: String?
     var delivery3: String?

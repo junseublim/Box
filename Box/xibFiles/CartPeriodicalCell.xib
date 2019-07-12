@@ -36,16 +36,16 @@
                         <color key="tintColor" red="1" green="0.4549019608" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제주삼다수, 500ml,40개입" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ea5-Ce-2uH">
-                        <rect key="frame" x="37" y="23.5" width="283" height="17"/>
+                        <rect key="frame" x="37" y="23.5" width="279" height="17"/>
                         <fontDescription key="fontDescription" name="NotoSans-Medium" family="Noto Sans" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="96j-WF-zgE">
-                        <rect key="frame" x="339" y="26" width="16" height="16"/>
+                        <rect key="frame" x="335" y="22" width="20" height="20"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="16" id="mjE-mW-CFJ"/>
-                            <constraint firstAttribute="height" constant="16" id="wA0-sc-VsL"/>
+                            <constraint firstAttribute="width" constant="20" id="mjE-mW-CFJ"/>
+                            <constraint firstAttribute="height" constant="20" id="wA0-sc-VsL"/>
                         </constraints>
                         <state key="normal" image="icnClose"/>
                         <connections>
@@ -130,7 +130,7 @@
                 <constraint firstItem="njF-e1-oar" firstAttribute="trailing" secondItem="96j-WF-zgE" secondAttribute="trailing" constant="20" id="Fpc-ue-V6G"/>
                 <constraint firstItem="njF-e1-oar" firstAttribute="bottom" secondItem="T1r-cS-TOE" secondAttribute="bottom" constant="20.5" id="IFk-QY-gkd"/>
                 <constraint firstItem="DaT-LY-Uz2" firstAttribute="leading" secondItem="njF-e1-oar" secondAttribute="leading" constant="18" id="a21-D3-dyI"/>
-                <constraint firstItem="96j-WF-zgE" firstAttribute="top" secondItem="njF-e1-oar" secondAttribute="top" constant="26" id="cpE-jP-bQe"/>
+                <constraint firstItem="96j-WF-zgE" firstAttribute="top" secondItem="njF-e1-oar" secondAttribute="top" constant="22" id="cpE-jP-bQe"/>
                 <constraint firstItem="njF-e1-oar" firstAttribute="bottom" secondItem="R1K-Ay-dbE" secondAttribute="bottom" constant="20" id="mGZ-dT-JZm"/>
                 <constraint firstItem="YvU-kt-Ehl" firstAttribute="top" secondItem="njF-e1-oar" secondAttribute="top" constant="26" id="n0I-Hi-dnI"/>
                 <constraint firstItem="njF-e1-oar" firstAttribute="bottom" secondItem="DaT-LY-Uz2" secondAttribute="bottom" constant="31.5" id="qps-IN-vbM"/>

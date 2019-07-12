@@ -15,7 +15,7 @@ struct SignUp {
         "Content-Type" : "application/json"
     ]
     
-    func signUp(_ email: String,_ password: String,_ name: String,_ birth: String,_ phone :  String,_ gender :  Int,_ receiver : String,_ receiver_phone: String,_ address1: String, _ address2: String,_ address_detail: String,_ delivery_memo: String, completion: @escaping (NetworkResult<Any>) -> Void) {
+    func signUp(_ email: String,_ password: String,_ name: String,_ birth: String,_ phone :  String,_ gender :  String,_ receiver : String,_ receiver_phone: String,_ address1: String, _ address2: String,_ address_detail: String,_ delivery_memo: String, completion: @escaping (NetworkResult<Any>) -> Void) {
         
         let body : Parameters = [
             "email": email,

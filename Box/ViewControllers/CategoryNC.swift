@@ -2,17 +2,19 @@
 //  CategoryNC.swift
 //  Box
 //
-//  Created by Jun Seub Lim on 10/07/2019.
+//  Created by Jun Seub Lim on 13/07/2019.
 //  Copyright © 2019 Jun Seub Lim. All rights reserved.
 //
 
 import UIKit
+import Hero
 
 class CategoryNC: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        // Do any additional setup after loading the view.
     }
     
 

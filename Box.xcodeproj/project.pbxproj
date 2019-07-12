@@ -90,8 +90,8 @@
 		D682448522D5B90B00E334CF /* ForUResultPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D682448422D5B90B00E334CF /* ForUResultPageVC.swift */; };
 		D694BA8A22D87B6E00A5638F /* MyBoxVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D694BA8922D87B6E00A5638F /* MyBoxVC.swift */; };
 		D694BA8E22D8A81E00A5638F /* AccountDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D694BA8D22D8A81E00A5638F /* AccountDAO.swift */; };
-		D694BA9222D8AC5B00A5638F /* Account.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = D694BA9122D8AC5A00A5638F /* Account.sqlite */; };
 		D694BA9622D8C9A100A5638F /* PaymentCartCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D694BA9522D8C9A100A5638F /* PaymentCartCell2.swift */; };
+		D694BA9C22D8FDB700A5638F /* Account.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = D694BA9B22D8FDB600A5638F /* Account.sqlite */; };
 		D6AFB2AB22C8A668007F6A3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AFB2AA22C8A668007F6A3D /* AppDelegate.swift */; };
 		D6AFB2B022C8A668007F6A3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6AFB2AE22C8A668007F6A3D /* Main.storyboard */; };
 		D6AFB2B222C8A669007F6A3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6AFB2B122C8A669007F6A3D /* Assets.xcassets */; };
@@ -215,8 +215,8 @@
 		D682448422D5B90B00E334CF /* ForUResultPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForUResultPageVC.swift; sourceTree = "<group>"; };
 		D694BA8922D87B6E00A5638F /* MyBoxVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyBoxVC.swift; path = ../StoryBoard/MyBoxVC.swift; sourceTree = "<group>"; };
 		D694BA8D22D8A81E00A5638F /* AccountDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDAO.swift; sourceTree = "<group>"; };
-		D694BA9122D8AC5A00A5638F /* Account.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = Account.sqlite; sourceTree = "<group>"; };
 		D694BA9522D8C9A100A5638F /* PaymentCartCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PaymentCartCell2.swift; path = /Users/junslim11/Desktop/Box/Box/PaymentCartCell2.swift; sourceTree = "<absolute>"; };
+		D694BA9B22D8FDB600A5638F /* Account.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = Account.sqlite; sourceTree = "<group>"; };
 		D6AFB2A722C8A668007F6A3D /* Box.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Box.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6AFB2AA22C8A668007F6A3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D6AFB2AF22C8A668007F6A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -458,12 +458,12 @@
 				D67F1EE022D66EF5007446D0 /* Bridging-Header.h */,
 				D67F1EE122D67066007446D0 /* Cart.sqlite */,
 				D67F1EE922D69B88007446D0 /* Recent.sqlite */,
-				D67F1EE322D670B4007446D0 /* Cart_RegularDAO.swift */,
-				D694BA9122D8AC5A00A5638F /* Account.sqlite */,
-				D694BA8D22D8A81E00A5638F /* AccountDAO.swift */,
-				D67F1EE522D672AE007446D0 /* Cart_PackageDAO.swift */,
-				D67F1EE722D69705007446D0 /* RecentSearchedDAO.swift */,
+				D694BA9B22D8FDB600A5638F /* Account.sqlite */,
 				D6AFB2AA22C8A668007F6A3D /* AppDelegate.swift */,
+				D67F1EE522D672AE007446D0 /* Cart_PackageDAO.swift */,
+				D67F1EE322D670B4007446D0 /* Cart_RegularDAO.swift */,
+				D67F1EE722D69705007446D0 /* RecentSearchedDAO.swift */,
+				D694BA8D22D8A81E00A5638F /* AccountDAO.swift */,
 				D67F1ECF22D66ED2007446D0 /* fmdb */,
 				D60E593822D38FF500ED2A68 /* Models */,
 				D651618922CC6943002AE0DC /* xibFiles */,
@@ -559,7 +559,7 @@
 				D675423922C9DE4C00A319D4 /* CategoryCVC.xib in Resources */,
 				D60A8FCD22C91E1A00086350 /* TabBar.storyboard in Resources */,
 				D64EF5E122D07C4000784A82 /* LogIn.storyboard in Resources */,
-				D694BA9222D8AC5B00A5638F /* Account.sqlite in Resources */,
+				D694BA9C22D8FDB700A5638F /* Account.sqlite in Resources */,
 				D6C6010422CBA110001ED3C8 /* NotoSans-Medium.ttf in Resources */,
 				D6CFDAE022D6041B00E58D0D /* Payment.storyboard in Resources */,
 				D61F15AC22CE462E0063C172 /* Cart.storyboard in Resources */,
@@ -630,6 +630,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Box/Pods-Box-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AddressSearchModule/AddressSearchModule.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/RangeSeekSlider/RangeSeekSlider.framework",
 				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
@@ -640,6 +641,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AddressSearchModule.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RangeSeekSlider.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",

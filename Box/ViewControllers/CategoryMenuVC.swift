@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 class CategoryMenuVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
    
     let appDelegate = UIApplication.shared.delegate as! AppDelegate

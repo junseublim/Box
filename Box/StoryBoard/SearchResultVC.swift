@@ -166,6 +166,7 @@ extension SearchResultVC : UITableViewDataSource {
     }
     @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
         self.view.endEditing(true)
+        self.searchResultTV.removeGestureRecognizer(sender!)
     }
 }
 extension SearchResultVC: UISearchBarDelegate {

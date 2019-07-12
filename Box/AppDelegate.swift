@@ -11,20 +11,25 @@ import Kingfisher
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    var PurchaseDone = false
+    var LogInDone = false
     var window: UIWindow?
     var periodicalCart = [CartItem]()
     var packageCart = [CartItem]()
     var cart = [[CartItem]]()
     var token : String?
     var recentSearched = [String]()
+    var tempAccount = Account()
+    var email = ""
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         UINavigationBar.appearance().shadowImage = UIImage()
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
-        UINavigationBar.appearance().isTranslucent = true
         cart.append(periodicalCart)
         cart.append(packageCart)
-        token = ""
+        let account = Account(email: "powe0112@gmail.com", name: "손수영", birth: "970326", phone: "01065329657", gender: 1, recipient: "손수영", phoneDelivery: "01065329657", delivery1: "22211", delivery2: "인천광역시 미추홀구 재넘이길 147-17", delivery3: "문화네트빌 202동 403호", deliveryMemo: "  문 앞", deliveryDate: 20, token: nil)
+        tempAccount = account
+        
         return true
     }
     

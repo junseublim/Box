@@ -37,7 +37,6 @@ class PeriodicalProductVC: UIViewController {
         setNaviBtn(color: UIColor.darkGrey)
         //setTestItems()
         registerTVC()
-        
         getItems(idx: idx!, flag: flag)
        
     }

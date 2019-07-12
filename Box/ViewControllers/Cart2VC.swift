@@ -11,8 +11,6 @@ import UIKit
 class Cart2VC: UIViewController, UITableViewDelegate, UITableViewDataSource, CartPeriodicalCellDelegate, CartPackageCellDelegate {
 
     
-    typealias Cart_RegularRecord = (String,Int, Int)
-    typealias Cart_PackageRecord = (String,Int)
     @IBOutlet var countPicker: UIPickerView!
     
     @IBOutlet var pickerTool: UIToolbar!

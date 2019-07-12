@@ -11,11 +11,16 @@ import UIKit
 class MyBoxVC: UIViewController {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
-    @IBOutlet var logOutBtn: UIButton!
+    @IBOutlet var maskingView: UIView!
+    @IBOutlet var nameLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setNaviBtn(color: UIColor.brownishGrey)
+        if appDelegate.token == nil {
+            maskingView.isHidden = false
+        }
+        nameLabel.text = appDelegate.email
     }
     func setNaviBtn(color : UIColor){
         
@@ -51,7 +56,17 @@ class MyBoxVC: UIViewController {
     }
     
     @IBAction func logOut(_ sender: Any) {
+        let added = UIAlertController(title: "로그아웃 하였습니다", message: "", preferredStyle: UIAlertController.Style.alert)
+        let addedAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: { result in self.rootPop()})
+        added.addAction(addedAction)
+        present(added, animated: true, completion:  nil)
         
     }
+    func rootPop() {
+        appDelegate.token = nil
+        maskingView.isHidden = false
+        self.tabBarController?.selectedIndex = 0
+    }
+    
     
 }

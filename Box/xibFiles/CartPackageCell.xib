@@ -36,16 +36,16 @@
                         <color key="tintColor" red="1" green="0.4549019608" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제주삼다수, 500ml,40개입" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VLz-LK-2Hi">
-                        <rect key="frame" x="37" y="23.5" width="283" height="17"/>
+                        <rect key="frame" x="37" y="17" width="279" height="30"/>
                         <fontDescription key="fontDescription" name="NotoSans-Medium" family="Noto Sans" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JqM-vH-x1Z">
-                        <rect key="frame" x="339" y="26" width="16" height="16"/>
+                        <rect key="frame" x="335" y="22" width="20" height="20"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="16" id="2sY-Vt-i3v"/>
-                            <constraint firstAttribute="height" constant="16" id="pfb-Fd-emI"/>
+                            <constraint firstAttribute="width" constant="20" id="2sY-Vt-i3v"/>
+                            <constraint firstAttribute="height" constant="20" id="pfb-Fd-emI"/>
                         </constraints>
                         <state key="normal" image="icnClose"/>
                         <connections>
@@ -53,7 +53,7 @@
                         </connections>
                     </button>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="waterSample" translatesAutoresizingMaskIntoConstraints="NO" id="WbZ-cp-RVw">
-                        <rect key="frame" x="18" y="58.5" width="180.5" height="80"/>
+                        <rect key="frame" x="18" y="65" width="180.5" height="80"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="WbZ-cp-RVw" secondAttribute="height" multiplier="9:4" id="33Y-RS-vTI"/>
                         </constraints>
@@ -71,7 +71,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPv-Sg-Jrn">
-                        <rect key="frame" x="147.5" y="119.5" width="101" height="30"/>
+                        <rect key="frame" x="147.5" y="115" width="101" height="30"/>
                         <fontDescription key="fontDescription" name="NotoSans-Medium" family="Noto Sans" pointSize="13"/>
                         <state key="normal">
                             <color key="titleColor" red="0.1333333333" green="0.1450980392" blue="0.16078431369999999" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
@@ -81,7 +81,7 @@
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Yk-oc-jRn">
-                        <rect key="frame" x="257.5" y="120" width="101.5" height="30"/>
+                        <rect key="frame" x="257.5" y="115" width="101.5" height="30"/>
                         <fontDescription key="fontDescription" name="NotoSans-Medium" family="Noto Sans" pointSize="13"/>
                         <state key="normal">
                             <color key="titleColor" red="0.1333333333" green="0.1450980392" blue="0.16078431369999999" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
@@ -91,7 +91,7 @@
                         </connections>
                     </button>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brownishArrow" translatesAutoresizingMaskIntoConstraints="NO" id="nvt-zQ-5g3">
-                        <rect key="frame" x="335.5" y="127" width="16" height="16"/>
+                        <rect key="frame" x="335.5" y="122" width="16" height="16"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="16" id="bVa-4G-KUo"/>
                             <constraint firstAttribute="width" constant="16" id="tyh-TN-dpJ"/>
@@ -115,15 +115,15 @@
                 </constraints>
             </tableViewCellContentView>
             <constraints>
-                <constraint firstItem="b2Z-j7-gSA" firstAttribute="bottom" secondItem="1Yk-oc-jRn" secondAttribute="bottom" constant="20" id="3fT-1F-TuA"/>
+                <constraint firstItem="b2Z-j7-gSA" firstAttribute="bottom" secondItem="1Yk-oc-jRn" secondAttribute="bottom" constant="25" id="3fT-1F-TuA"/>
                 <constraint firstItem="b2Z-j7-gSA" firstAttribute="trailing" secondItem="JqM-vH-x1Z" secondAttribute="trailing" constant="20" id="8cR-aw-30d"/>
-                <constraint firstItem="b2Z-j7-gSA" firstAttribute="bottom" secondItem="dPv-Sg-Jrn" secondAttribute="bottom" constant="20.5" id="So4-TM-FgK"/>
+                <constraint firstItem="b2Z-j7-gSA" firstAttribute="bottom" secondItem="dPv-Sg-Jrn" secondAttribute="bottom" constant="25" id="So4-TM-FgK"/>
                 <constraint firstItem="b2Z-j7-gSA" firstAttribute="trailing" secondItem="wya-OK-3cZ" secondAttribute="trailing" constant="16" id="VEV-Gk-qiQ"/>
                 <constraint firstItem="0nh-xd-1w5" firstAttribute="top" secondItem="b2Z-j7-gSA" secondAttribute="top" constant="26" id="fZN-HQ-3Jm"/>
-                <constraint firstItem="b2Z-j7-gSA" firstAttribute="bottom" secondItem="WbZ-cp-RVw" secondAttribute="bottom" constant="31.5" id="kvQ-Mg-MJs"/>
+                <constraint firstItem="b2Z-j7-gSA" firstAttribute="bottom" secondItem="WbZ-cp-RVw" secondAttribute="bottom" constant="25" id="kvQ-Mg-MJs"/>
                 <constraint firstItem="WbZ-cp-RVw" firstAttribute="leading" secondItem="b2Z-j7-gSA" secondAttribute="leading" constant="18" id="l2H-bb-y9o"/>
                 <constraint firstItem="b2Z-j7-gSA" firstAttribute="bottom" secondItem="wya-OK-3cZ" secondAttribute="bottom" constant="62.5" id="n0U-zQ-k2e"/>
-                <constraint firstItem="JqM-vH-x1Z" firstAttribute="top" secondItem="b2Z-j7-gSA" secondAttribute="top" constant="26" id="prY-w7-Wgb"/>
+                <constraint firstItem="JqM-vH-x1Z" firstAttribute="top" secondItem="b2Z-j7-gSA" secondAttribute="top" constant="22" id="prY-w7-Wgb"/>
                 <constraint firstItem="0nh-xd-1w5" firstAttribute="leading" secondItem="b2Z-j7-gSA" secondAttribute="leading" constant="18" id="q2A-bk-5Cv"/>
                 <constraint firstItem="b2Z-j7-gSA" firstAttribute="trailing" secondItem="1Yk-oc-jRn" secondAttribute="trailing" constant="16" id="rGP-Br-roN"/>
             </constraints>

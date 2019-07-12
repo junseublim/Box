@@ -55,15 +55,23 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lB5-8D-7li">
                                                     <rect key="frame" x="0.0" y="0.0" width="68" height="50"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="category"/>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sgj-Pj-wFM">
-                                                    <rect key="frame" x="19.666666666666664" y="17.666666666666668" width="28.666666666666664" height="15.000000000000004"/>
+                                                    <rect key="frame" x="20" y="17.666666666666668" width="28.333333333333329" height="15.000000000000004"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="15" id="LkQ-AK-iM3"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="NotoSans-Medium" family="Noto Sans" pointSize="11"/>
                                                     <color key="textColor" red="0.12941176469999999" green="0.1450980392" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="category"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                             </subviews>
                                         </view>
@@ -81,6 +89,9 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </collectionView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tRr-XT-sX8">
                                 <rect key="frame" x="0.0" y="110" width="375" height="668"/>
@@ -96,7 +107,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iSR-A1-tw8">
-                                            <rect key="frame" x="314" y="12" width="45" height="18"/>
+                                            <rect key="frame" x="305" y="12" width="54" height="18"/>
                                             <fontDescription key="fontDescription" name="NotoSans-Medium" family="Noto Sans" pointSize="13"/>
                                             <state key="normal" title="최신순 " image="arrow">
                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -143,6 +154,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4dM-Ex-egH"/>
                     </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="NO"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="numOfProducts" destination="wtR-GS-aE3" id="Boe-gZ-2Ao"/>
                         <outlet property="productListTV" destination="tRr-XT-sX8" id="Gpt-hL-ddi"/>
@@ -168,11 +182,15 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nd8-r2-49o">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1436.6666666666667"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="99" translatesAutoresizingMaskIntoConstraints="NO" id="s73-Uw-4iz">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="s73-Uw-4iz">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="s73-Uw-4iz" secondAttribute="height" multiplier="1:1" id="IOF-GJ-KkK"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="삼다수" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S3N-F9-uAf">
                                                 <rect key="frame" x="15.999999999999996" y="395" width="41.666666666666657" height="22"/>
@@ -471,6 +489,9 @@
                         <viewLayoutGuide key="safeArea" id="O0A-8l-UoD"/>
                     </view>
                     <size key="freeformSize" width="375" height="1383"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="NO"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="countStepper" destination="55w-PG-7JK" id="IhG-Kz-gqz"/>
                         <outlet property="detailScroll" destination="TTA-ah-iGc" id="skF-D8-7sz"/>
@@ -782,7 +803,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Moi-tc-GRe">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="733"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="689"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PackageDetail1Cell" rowHeight="315" id="tqO-Rx-WdU" customClass="PackageDetail1Cell" customModule="Box" customModuleProvider="target">
@@ -979,7 +1000,7 @@
                         <constraints>
                             <constraint firstItem="VAs-7p-cL9" firstAttribute="leading" secondItem="XpG-ya-gBk" secondAttribute="leading" id="2vm-qp-WyP"/>
                             <constraint firstItem="VAs-7p-cL9" firstAttribute="top" secondItem="Moi-tc-GRe" secondAttribute="bottom" id="3CM-aK-z0A"/>
-                            <constraint firstItem="XpG-ya-gBk" firstAttribute="top" secondItem="Moi-tc-GRe" secondAttribute="top" constant="44" id="5Yz-z7-UWV"/>
+                            <constraint firstItem="XpG-ya-gBk" firstAttribute="top" secondItem="Moi-tc-GRe" secondAttribute="top" id="5Yz-z7-UWV"/>
                             <constraint firstItem="XpG-ya-gBk" firstAttribute="trailing" secondItem="dTc-UP-3iy" secondAttribute="trailing" id="BOG-lD-dmH"/>
                             <constraint firstItem="GGZ-TU-tuh" firstAttribute="top" secondItem="VAs-7p-cL9" secondAttribute="top" id="Gtd-QC-S9k"/>
                             <constraint firstItem="XpG-ya-gBk" firstAttribute="top" secondItem="dTc-UP-3iy" secondAttribute="top" constant="44" id="H5A-k9-ka0"/>
@@ -1012,6 +1033,6 @@
     <resources>
         <image name="4" width="375" height="777"/>
         <image name="99" width="375" height="375"/>
-        <image name="arrow" width="7" height="4"/>
+        <image name="arrow" width="16" height="16"/>
     </resources>
 </document>

@@ -9,12 +9,12 @@
 import UIKit
 class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-   
+    typealias Cart_RegularRecord = (String,String,String,Int,Int, Int)
+    typealias Cart_PackageRecord = (String,String,String, Int,Int)
 
     @IBOutlet var paymentTV: UITableView!
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var cartCount = 0
-    let account = Account(email: "powe0112@gmail.com", name: "손수영", phone: 01065329657, recipient: "손수영", phoneDelivery: 01065329657, delivery1: "22211", delivery2: "인천광역시 미추홀구 재넘이길 147-17", delivery3: "문화네트빌 202동 403호", deliveryMemo: "  문 앞", deliveryDate: 20, token: nil)
     var productInfo = true
     var customerInfo = true
     var deliveryInfo = true
@@ -23,24 +23,35 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var totalPriceInfo = true
     var totalPrice = 0
     let formatter = NumberFormatter()
+    let cart_RegularDAO = Cart_RegularDAO()
+    let cart_PackageDAO = Cart_PackageDAO()
+    var cart = [CartItem]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         registerTVC()
         paymentTV.delegate = self
         paymentTV.dataSource = self
-        cartCount = appDelegate.cart[0].count + appDelegate.cart[1].count
         formatter.numberStyle = .decimal
         setNaviBtn(color: UIColor.darkGrey)
         navigationItem.title = "주문 결제"
-        var cart = [CartItem]()
+        
         for i in appDelegate.cart {
             for j in i {
+                if j.selected == true {
                 cart.append(j)
+                }
             }
         }
+        cartCount = cart.count
         for item in cart {
             totalPrice += item.price! * item.amount!
+        }
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        if appDelegate.PurchaseDone == true {
+            appDelegate.PurchaseDone = false
+            self.navigationController?.popToRootViewController(animated: true)
         }
     }
     func setNaviBtn(color: UIColor) {
@@ -86,28 +97,49 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             else if indexPath.section == 5 {totalPriceInfo = !totalPriceInfo}
             let section = IndexSet.init(integer: indexPath.section)
             paymentTV.reloadSections(section, with: .none)
-            }
+
         
         }
+    }
     
     @IBAction func PurchaseBtn(_ sender: Any) {
         let dvc = UIStoryboard(name: "Cart", bundle: nil).instantiateViewController(withIdentifier: "OrderResultVC") as! OrderResultVC
-        var cart = [CartItem]()
-        for i in appDelegate.cart {
-            for j in i {
-                cart.append(j)
-            }
-        }
         dvc.TotalPrice = self.totalPrice
         dvc.count = self.cartCount - 1
         dvc.firstItem = cart[0].name
+        
+        for item in appDelegate.cart[0] {
+            if item.selected! {
+                let rs = cart_RegularDAO.remove(product_id: item.id!)
+            }
+        }
+        for item in appDelegate.cart[1] {
+            if item.selected! {
+                let rs = cart_PackageDAO.remove(package_id: item.id!)
+            }
+        }
+        appDelegate.cart[0].removeAll()
+        appDelegate.cart[1].removeAll()
+        let RegularItems : [Cart_RegularRecord] = cart_RegularDAO.find()
+        let PackageItems : [Cart_PackageRecord] = cart_PackageDAO.find()
+        for regularitem in RegularItems {
+            print("appendingRegularItem")
+            print(regularitem)
+            appDelegate.cart[0].append(CartItem(id: regularitem.0, name: regularitem.1, image: regularitem.2, price: regularitem.3, amount: regularitem.4, duration: regularitem.5)! )
+        }
+        for packageitem in PackageItems {
+            print("appendingPackageItem")
+            print(packageitem)
+            appDelegate.cart[1].append(CartItem(id: packageitem.0,name: packageitem.1,image: packageitem.2, price: packageitem.3, amount: packageitem.4)!)
+        }
+        
+        appDelegate.PurchaseDone = true
         self.present(dvc, animated: true)
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 6
     }
-    /*
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    /*    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UITableViewHeaderFooterView()
         headerView.textLabel?.font = UIFont(name: "NotoSans-Bold.ttf", size: 18)
         return headerView
@@ -118,13 +150,6 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
  */
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cart = [CartItem]()
-        for i in appDelegate.cart {
-            for j in i {
-                cart.append(j)
-            }
-        }
-
         if indexPath.section == 0 {
             if indexPath.row == 0 {
                 let cell = paymentTV.dequeueReusableCell(withIdentifier: "PaymentHeaderCell", for: indexPath) as! PaymentHeaderCell
@@ -167,11 +192,19 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                 return cell
             }
             let cell = paymentTV.dequeueReusableCell(withIdentifier: "PaymentOrdererCell", for: indexPath) as! PaymentOrdererCell
-            cell.emailTF.text = account.email
-            cell.ordererLabel.text = account.name
-            cell.phone1TF.text = "010"
-            cell.phone2TF.text = "6532"
-            cell.phone3TF.text = "9657"
+            let phone = appDelegate.tempAccount.phone!
+            let middle1Idx : String.Index = phone.index(phone.startIndex, offsetBy: 3)
+            let middle2Idx : String.Index = phone.index(phone.startIndex, offsetBy: 7)
+            let endIdx: String.Index = phone.index(before: phone.endIndex)
+            //let startIdx = phone.index(after: phone.startIndex)
+            let phone1 = phone[phone.startIndex ..< middle1Idx]
+            let phone2 = phone[middle1Idx ..< middle2Idx]
+            let phone3 = phone[middle2Idx ..< endIdx]
+            cell.emailTF.text = appDelegate.tempAccount.email!
+            cell.ordererLabel.text = appDelegate.tempAccount.name!
+            cell.phone1TF.text = String(phone1)
+            cell.phone2TF.text = String(phone2)
+            cell.phone3TF.text = String(phone3)
             return cell
         }
         else if indexPath.section == 2 {
@@ -185,14 +218,22 @@ class PaymentVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                 return cell
             }
             let cell = paymentTV.dequeueReusableCell(withIdentifier: "PaymentRecipientCell", for: indexPath) as! PaymentRecipientCell
+            let phone = appDelegate.tempAccount.phoneDelivery!
+            let middle1Idx : String.Index = phone.index(phone.startIndex, offsetBy: 3)
+            let middle2Idx : String.Index = phone.index(phone.startIndex, offsetBy: 7)
+            let endIdx: String.Index = phone.index(before: phone.endIndex)
+            //let startIdx = phone.index(after: phone.startIndex)
+            let phone1 = phone[phone.startIndex ..< middle1Idx]
+            let phone2 = phone[middle1Idx ..< middle2Idx]
+            let phone3 = phone[middle2Idx ..< endIdx]
             cell.recipientTF.text = "손수영"
-            cell.address1TF.text = account.delivery1
-            cell.address2TF.text = account.delivery2
-            cell.address3TF.text = account.delivery3
-            cell.phone1TF.text = "010"
-            cell.phone2TF.text = "6532"
-            cell.phone3TF.text = "9657"
-            cell.deliveryMemoBtn.setTitle(account.deliveryMemo, for: .normal)
+            cell.address1TF.text = appDelegate.tempAccount.delivery1!
+            cell.address2TF.text = appDelegate.tempAccount.delivery2!
+            cell.address3TF.text = appDelegate.tempAccount.delivery3!
+            cell.phone1TF.text = String(phone1)
+            cell.phone2TF.text = String(phone2)
+            cell.phone3TF.text = String(phone3)
+            cell.deliveryMemoBtn.setTitle(appDelegate.tempAccount.deliveryMemo, for: .normal)
             return cell
         }
         else if indexPath.section == 3 {

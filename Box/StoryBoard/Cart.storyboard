@@ -213,6 +213,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+                                    <action selector="goShopping:" destination="hao-xs-2EZ" eventType="touchUpInside" id="Td2-7g-Pot"/>
                                     <action selector="goToShopping:" destination="hao-xs-2EZ" eventType="touchUpInside" id="fYd-Bu-Qj3"/>
                                 </connections>
                             </button>
@@ -335,8 +336,11 @@
                                 <color key="textColor" red="0.1333333333" green="0.1450980392" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제주삼다수, 500ml, 40개입 외 3개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J9U-ht-nuT">
-                                <rect key="frame" x="165.33333333333337" y="577" width="193.66666666666663" height="19.333333333333371"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제주삼다수, 500ml, 40개입 외 3개" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J9U-ht-nuT">
+                                <rect key="frame" x="100" y="577" width="259" height="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="259" id="ZSt-vh-4n3"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="NotoSans-Light" family="Noto Sans" pointSize="14"/>
                                 <color key="textColor" red="0.1333333333" green="0.1450980392" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -363,7 +367,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="O3U-8D-8ko" kind="unwind" unwindAction="unwindToHomeWithSegue:" id="czG-E5-DMi"/>
+                                            <action selector="goToHome:" destination="rik-qG-JVr" eventType="touchUpInside" id="z6t-s1-mV0"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -426,9 +430,8 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z4b-p9-Z7p" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="O3U-8D-8ko" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2423" y="-267"/>
+            <point key="canvasLocation" x="2421.5999999999999" y="-267.48768472906403"/>
         </scene>
     </scenes>
     <resources>

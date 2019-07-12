@@ -36,6 +36,9 @@ class SignUp2VC: UIViewController, UITextFieldDelegate {
     var address2 : String?
     var address_detail : String?
     var delivery_memo : String?
+    var account : Account?
+    let accountDAO = AccountDao()
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         oneLabel.makeRounded(cornerRadius: 10)
@@ -97,7 +100,10 @@ class SignUp2VC: UIViewController, UITextFieldDelegate {
     @IBAction func getAddress(_ sender: Any) {
         
     }
-    
+    func signIn() {
+        let dvc = self.storyboard?.instantiateViewController(withIdentifier: "LogInVC") as! LogInVC
+        self.navigationController?.pushViewController(dvc, animated: true)
+    }
     @IBAction func goToLogIn(_ sender: Any) {
         self.receiver = receiverTF.text!
         self.receiver_phone = num1TF.text! + num2TF.text! + num3TF.text!
@@ -112,7 +118,7 @@ class SignUp2VC: UIViewController, UITextFieldDelegate {
             self.delivery_memo = self.deliveryMemo.titleLabel?.text
         }
         print(email!,password!,name!,birth!,phone!,gender!,receiver!,receiver_phone!,address1!,address2!,address_detail!,delivery_memo!)
-        SignUp.shared.signUp(email!, password!, name!, birth!, phone!, gender!, receiver!, receiver_phone!, address1!, address2!, address_detail!, delivery_memo!) {
+        SignUp.shared.signUp(email!, password!, name!, birth!, phone!, String(gender!), receiver!, receiver_phone!, address1!, address2!, address_detail!, delivery_memo!) {
             [weak self]
             data in
             
@@ -120,11 +126,18 @@ class SignUp2VC: UIViewController, UITextFieldDelegate {
             switch data {
             case .success( _):
                 print("회원가입 성공")
-                let dvc = self.storyboard?.instantiateViewController(withIdentifier: "LogInVC") as! LogInVC
-                self.navigationController?.pushViewController(dvc, animated: true)
+                self.account = Account(email: self.email!, name: self.name!,birth: self.birth!, phone: self.phone!, gender: self.gender!, recipient: self.receiver!, phoneDelivery: self.receiver_phone!, delivery1: self.address1!, delivery2: self.address2!, delivery3: self.address_detail!, deliveryMemo: self.delivery_memo!, deliveryDate: 20, token: "")
+                let added = UIAlertController(title: "회원가입 하였습니다.", message: "", preferredStyle: UIAlertController.Style.alert)
+                let addedAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: { result in self.signIn()})
+                added.addAction(addedAction)
+                self.appDelegate.tempAccount = self.account!
+                self.appDelegate.LogInDone = true
+                self.present(added, animated: true, completion:  nil)
+  
                 break
-            case .requestErr(_):
+            case .requestErr(let message):
                 print("request error")
+                print(message)
                 break
             case .pathErr:
                 print("path error")

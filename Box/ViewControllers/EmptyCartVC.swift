@@ -37,4 +37,7 @@ class EmptyCartVC: UIViewController {
     }
 
  
+    @IBAction func goShopping(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
 }

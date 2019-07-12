@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Hero
 
 class CategoryCVC: UICollectionViewCell {
 
@@ -16,6 +17,7 @@ class CategoryCVC: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         categoryView.setBorder(borderColor: UIColor.lightBlueGrey, borderWidth: 0.5)
+        categoryName.hero.id = "category"
     }
 
 }
