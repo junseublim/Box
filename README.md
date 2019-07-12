@@ -15,6 +15,8 @@
 
 * 어플리케이션 구성 : Mobile App(Android, iOS), Server
 
+* **웹사이트**: https://xnpsldnjs21.wixsite.com/readyforbox
+
 * **API** : http://13.209.206.99:3000/docs
 
 
